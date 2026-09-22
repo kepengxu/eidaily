@@ -35,7 +35,10 @@ jobs:
         if: github.event_name != 'push'
         uses: actions/cache@v4
         with:
-          path: outputs/*cache.json
+          path: |
+            outputs/*cache.json
+            outputs/pulsar-pending.json
+            outputs/pulsar-quarantine.json
           key: eidaily-news-cache-${{ runner.os }}-${{ github.run_id }}-${{ github.run_attempt }}
           restore-keys: |
             eidaily-news-cache-${{ runner.os }}-
@@ -86,6 +89,7 @@ jobs:
           import { execFileSync } from 'node:child_process';
           const files = ['public/news-data.json', 'public/news-archive.json', 'public/robodojo-news.json', 'public/version.json'];
           if (fs.existsSync('public/suyxh-source-status.json')) files.push('public/suyxh-source-status.json');
+          if (fs.existsSync('public/pulsar-source-status.json')) files.push('public/pulsar-source-status.json');
           const history = 'public/robodojo-news-history';
           if (fs.existsSync(history)) {
             for (const name of fs.readdirSync(history)) {

@@ -36,7 +36,8 @@
       "robotic foundation model", "dexterous manipulation",
       "mobile manipulation", "bimanual manipulation", "diffusion policy",
       "sim-to-real", "cross-embodiment", "robot world model",
-      "robot dataset", "teleoperation"
+      "robot dataset", "teleoperation", "VLA", "embodiedAI", "embodied intelligence",
+      "visionLanguageAction", "physicalAI", "action-conditioned world model"
     ],
     "entities": [
       "OpenVLA", "GR00T", "Gemini Robotics", "Unitree", "AgiBot",
@@ -50,6 +51,10 @@
       "ACT", "PI", "RDT", "Octo", "CALVIN", "Habitat",
       "VLA", "VLN", "任务规划", "运动控制", "世界模型"
     ]
+  },
+  "worldmodel": {
+    "terms": ["worldmodel", "worldmodels", "world model", "world models", "world-model", "world-models", "世界模型"],
+    "anchors": ["AI", "artificial intelligence", "neural", "learning", "generative", "prediction", "predictive", "simulation", "action-conditioned", "video generation", "智能", "神经", "学习", "生成", "预测", "仿真", "人工智能"]
   },
   "roboticsAnchors": [
     "robot", "robots", "robotics", "robotic", "humanoid", "embodied",
@@ -68,7 +73,8 @@
       ],
       "embodied": [
         "具身智能", "具身AI", "人形机器人", "宇树", "智元机器人", "银河通用",
-        "机器人操作", "灵巧手", "遥操作", "VLA", "VLN", "robot foundation model"
+        "机器人操作", "灵巧手", "遥操作", "VLA", "VLN", "robot foundation model",
+        "视觉语言动作", "世界模型", "机器人世界模型", "embodiedAI"
       ]
     },
     "internationalEnglish": {
@@ -85,7 +91,9 @@
         "robot foundation model", "dexterous manipulation",
         "mobile manipulation", "sim-to-real", "OpenVLA", "GR00T",
         "Gemini Robotics", "Unitree", "AgiBot", "Figure AI",
-        "Physical Intelligence", "Skild AI", "teleoperation", "robot dataset"
+        "Physical Intelligence", "Skild AI", "teleoperation", "robot dataset",
+        "worldmodel", "world model", "world-model", "world models", "embodiedAI",
+        "embodied intelligence", "action-conditioned world model"
       ]
     }
   }

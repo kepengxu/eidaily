@@ -60,7 +60,7 @@ export function mergeIntoArchive(prevArchive, newItems, { now = new Date(), rete
       // 合并 provenance
       const pp = Array.isArray(prev.rawProvenance) ? prev.rawProvenance : [prev.rawProvenance];
       const np = Array.isArray(ni.rawProvenance) ? ni.rawProvenance : [ni.rawProvenance];
-      prev.rawProvenance = [...pp, ...np].filter(Boolean);
+      prev.rawProvenance = [...new Map([...pp, ...np].filter(Boolean).map(p => [JSON.stringify(p), p])).values()];
       // 不替换 publishedAt；仅在缺失时补
       if (!prev.publishedAt && ni.publishedAt) prev.publishedAt = ni.publishedAt;
       // 优先补非空 summary / titleZh

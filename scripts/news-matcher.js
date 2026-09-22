@@ -37,8 +37,14 @@ function matchAny(text, terms) {
   return terms.some((t) => matchTerm(text, t));
 }
 
+export function isWorldModel(text) {
+  return !!text && matchAny(text, KEYWORDS.worldmodel.terms)
+    && matchAny(text, [...KEYWORDS.worldmodel.anchors, ...KEYWORDS.roboticsAnchors]);
+}
+
 export function isEmbodied(text) {
   if (!text) return false;
+  if (isWorldModel(text)) return true;
   const e = KEYWORDS.embodied;
   if (matchAny(text, e.strong)) return true;
   if (matchAny(text, e.entities)) return true;
@@ -68,6 +74,7 @@ export function classifyText(text) {
 // 带原因的分类（供过滤统计与脱敏报告使用）。行为同 classifyText，但额外返回命中原因。
 export function classifyWithReason(text) {
   if (!text) return { category: null, reason: '空文本' };
+  if (isWorldModel(text)) return { category: DOMAIN_EMBODIED, reason: '具身智能-worldmodel+AI上下文' };
   const e = KEYWORDS.embodied;
   if (matchAny(text, e.strong)) return { category: DOMAIN_EMBODIED, reason: '具身智能-强词命中' };
   if (matchAny(text, e.entities)) return { category: DOMAIN_EMBODIED, reason: '具身智能-实体命中' };
@@ -125,9 +132,9 @@ const SERVICE_CORE_PRIORITY = {
     'OpenAI', 'Anthropic'
   ],
   embodied: [
-    'embodied AI', 'robotics', 'vision-language-action',
-    'vision-and-language navigation', 'humanoid robot',
-    'robot foundation model', 'dexterous manipulation'
+    'embodied AI', 'robotics', 'vision-language-action', 'VLA',
+    'world model', 'worldmodel', 'world-model', 'world models',
+    'embodiedAI', 'embodied intelligence', 'physical AI', 'vision-and-language navigation'
   ]
 };
 const SERVICE_MAX_TERMS = 12;
@@ -135,7 +142,9 @@ const SERVICE_MAX_TERMS = 12;
 export function serviceQuery(domain, lang = 'en') {
   const groupKey = QUERY_GROUP[lang] || 'internationalEnglish';
   const all = KEYWORDS.queries[groupKey][domain] || [];
-  const priority = SERVICE_CORE_PRIORITY[domain] || [];
+  const priority = lang === 'zh' && domain === 'embodied'
+    ? ['具身智能', '视觉语言动作', '世界模型', '机器人世界模型', 'VLA', 'physical AI', 'embodiedAI']
+    : SERVICE_CORE_PRIORITY[domain] || [];
   const seen = new Set();
   const terms = [];
   for (const w of [...priority, ...all]) {
@@ -155,14 +164,28 @@ const NEWSDATA_SHORT = {
     zh: '大模型 OR 具身智能 OR 机器人 OR DeepSeek OR 智谱',
   },
   embodied: {
-    en: 'embodied AI OR robotics OR humanoid OR VLA OR robot learning',
-    zh: '具身智能 OR 人形机器人 OR 宇树 OR 机器人操作 OR VLA',
+    en: 'embodied AI OR robotics OR VLA OR world model OR worldmodel OR physical AI OR embodiedAI',
+    zh: '具身智能 OR 视觉语言动作 OR 世界模型 OR 机器人 OR VLA OR embodiedAI',
   },
 };
 export function newsDataQuery(domain, lang = 'en') {
   const group = NEWSDATA_SHORT[domain];
   if (!group) return NEWSDATA_SHORT.llm[lang] || NEWSDATA_SHORT.llm.en;
   return group[lang] || group.en;
+}
+
+// 单条限制不变；补充短查询覆盖无法塞进 NewsData 100 字符的变体。
+export function apiQueries(service, domain, lang = 'en') {
+  const primary = service === 'newsdata' ? newsDataQuery(domain, lang) : serviceQuery(domain, lang);
+  if (domain !== 'embodied') return [primary];
+  const extra = lang === 'zh'
+    ? ['视觉语言动作 OR 世界模型 OR 机器人世界模型 OR 具身智能']
+    : ['vision-language-action OR world-model OR world models OR embodied intelligence',
+       'action-conditioned world model OR visionLanguageAction OR physicalAI'];
+  const limit = service === 'newsdata' ? 100 : 500;
+  const queries = [...new Set([primary, ...extra])];
+  if (queries.some(q => q.length > limit)) throw new Error('新闻查询超过服务长度限制');
+  return queries;
 }
 
 export { DOMAIN_LLM, DOMAIN_EMBODIED };

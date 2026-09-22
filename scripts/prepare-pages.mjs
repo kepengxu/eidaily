@@ -8,7 +8,7 @@ const dist = path.join(root, 'dist');
 const files = new Set([
   'index.html', '.nojekyll', 'sw.js',
   'news-data.json', 'news-archive.json', 'robodojo-news.json',
-  'suyxh-source-status.json', 'version.json', 'blog-data.json', 'feed.json', 'rss.xml',
+  'suyxh-source-status.json', 'pulsar-source-status.json', 'version.json', 'blog-data.json', 'feed.json', 'rss.xml',
   'favicon.svg', 'favicon.ico', 'favicon-large.svg', 'placeholder.svg',
   'wechat-share-300.png', 'wechat-share-300.svg', 'wechat-share-500.svg',
   'wechat-thumb.png', 'wechat-thumb.svg', 'cat-share-300.svg', 'share-icon.svg',

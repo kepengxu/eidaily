@@ -1,0 +1,13 @@
+{
+  "resourceUrl": "https://raw.githubusercontent.com/sou350121/pulsar-web/main/src/data/vla-social-intel.json",
+  "reportDate": "2026-09-21",
+  "lane": "vla",
+  "raw": {
+    "type": "开源项目",
+    "source": "綜合檢索（qwen_knowledge，9/19 產業摘要）",
+    "person_or_entity": "Figure / Figure 03",
+    "summary": "據報道 2026-09-19 發布 Helix 2.5 神經網絡模型，展示零樣本能力：在未經額外訓練的陌生環境中自主完成整理客廳、疊毛巾、鋪床等家務。",
+    "url": "",
+    "signal_level": "二级"
+  }
+}

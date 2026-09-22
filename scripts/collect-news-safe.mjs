@@ -7,7 +7,7 @@ import Parser from 'rss-parser';
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
-import { classifyText, newsDataQuery, serviceQuery } from './news-matcher.js';
+import { classifyText, apiQueries } from './news-matcher.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const PUBLIC_DIR = path.join(__dirname, '..', 'public');
@@ -104,8 +104,7 @@ async function collectNewsApiOrg() {
     rec.skipped = 'NEWSAPI_ORG_KEY 未配置，跳过';
     return rec;
   }
-  for (const domain of ['llm', 'embodied']) {
-    const q = serviceQuery(domain, 'en');
+  for (const { domain, q } of ['llm', 'embodied'].flatMap(domain => apiQueries('newsapi', domain, 'en').map(q => ({ domain, q })))) {
     const url = `https://newsapi.org/v2/everything?q=${encodeURIComponent(q)}&language=en&sortBy=publishedAt&pageSize=10&apiKey=${NEWSAPI_ORG_KEY}`;
     const reqRec = { domain, params: { q_terms: q.split(' OR ').length, language: 'en', pageSize: 10 } };
     try {
@@ -154,9 +153,8 @@ async function collectNewsData() {
     rec.skipped = 'NEWSDATA_API_KEY 未配置，跳过';
     return rec;
   }
-  for (const domain of ['llm', 'embodied']) {
-    // 使用 ≤100 字符短查询（免费套餐限制），避免 422 UnsupportedQueryLength
-    const q = newsDataQuery(domain, 'en');
+  for (const { domain, q } of ['llm', 'embodied'].flatMap(domain => apiQueries('newsdata', domain, 'en').map(q => ({ domain, q })))) {
+    // 每条查询仍不超过100字符。
     const url = `https://newsdata.io/api/1/news?apikey=${NEWSDATA_API_KEY}&q=${encodeURIComponent(q)}&language=en&size=10`;
     const reqRec = { domain, params: { q, language: 'en', size: 10 } };
     try {

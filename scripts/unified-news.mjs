@@ -20,6 +20,9 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 
 import { fetchSuYxhAggregator, SUYXH_ENDPOINTS } from './suyxh-adapter.mjs';
+import { fetchPulsar } from './pulsar-adapter.mjs';
+import { curatePulsar } from './pulsar-curator.mjs';
+import { fetchNewsAPIs } from './news-api-adapter.mjs';
 import { normalizeRawItem } from './lib/news-normalize.mjs';
 import { dedupItems } from './lib/news-dedup.mjs';
 import { loadArchive, mergeIntoArchive, writeArchive } from './lib/archive.mjs';
@@ -115,7 +118,8 @@ function normalizeLegacyItem(item, now) {
     mediaName: media,
     attribution: sourceEntry.attribution,
     sources: Array.isArray(item?.sources) && item.sources.length ? item.sources : [sourceEntry],
-    rawProvenance: { legacy: true, id: item?.id, source: item?.source, upstreamPlatform: item?.upstreamPlatform },
+    rawProvenance: item?.rawProvenance || { legacy: true, id: item?.id, source: item?.source, upstreamPlatform: item?.upstreamPlatform },
+    ...(item?.pulsarLane ? { pulsarLane: item.pulsarLane, lane: item.lane, eventPublishedAt: item.eventPublishedAt, fetchedAt: item.fetchedAt, originalText: item.originalText, pulsarProcessing: item.pulsarProcessing } : {}),
     filterReason: `既有采集(信任原分类 ${category})`,
     firstSeenAt: null,
     lastSeenAt: null,
@@ -240,6 +244,8 @@ export async function runPipeline(opts = {}) {
     skipBase = false,
     runBenchmark = true,
     runRank = true,
+    runPulsar = true,
+    runAPIs = true,
     maxHomepage = 8000,
     quiet = false,
   } = opts;
@@ -331,8 +337,25 @@ export async function runPipeline(opts = {}) {
   report.filterReasons['base-非两大领域/无日期'] = (report.filterReasons['base-非两大领域/无日期'] || 0) + baseExcluded;
   report.futureCount += baseFuture;
 
-  // 5) 跨源去重（合并 base + SuYxh）
-  const allOk = [...baseNormalized, ...suyxhNormalized];
+  // 5) 两API实际采集 + PULSAR有限候选整理，先规则再跨源模型事件去重。
+  const api = runAPIs ? await fetchNewsAPIs({ fetchImpl, now }) : { items: [], requests: [], successfulRequests: 0 };
+  report.steps.newsAPIs = { requests: api.requests, successfulRequests: api.successfulRequests, retained: api.items.length };
+  const allOk = [...baseNormalized, ...suyxhNormalized, ...api.items];
+  if (runPulsar) {
+    try {
+      const pulsar = await fetchPulsar({ fetchImpl, now });
+      fs.mkdirSync(outputsDir, { recursive: true });
+      fs.writeFileSync(path.join(outputsDir, 'pulsar-quarantine.json'), JSON.stringify(pulsar.quarantine, null, 2), { mode: 0o600 });
+      const curated = await curatePulsar(pulsar.items, allOk, { fetchImpl, now, outputsDir });
+      allOk.push(...curated.items);
+      report.steps.pulsar = { ...pulsar.status, processing: curated.status };
+      fs.mkdirSync(publicDir, { recursive: true });
+      fs.writeFileSync(path.join(publicDir, 'pulsar-source-status.json'), JSON.stringify(report.steps.pulsar, null, 2));
+    } catch {
+      report.steps.pulsar = { status: 'error', error: 'PULSAR采集或整理失败，保留既有归档' };
+      report.failures.push({ group: 'pulsar', error: report.steps.pulsar.error });
+    }
+  }
   const merged = dedupItems(allOk);
 
   // 6) 合并进 90 天滚动归档
@@ -356,6 +379,15 @@ export async function runPipeline(opts = {}) {
     opmlFeeds: suyxh.opmlFeeds,
     suyxhStats: suyxh.stats,
   });
+
+  if (report.steps.pulsar) {
+    report.steps.pulsar.published = Object.fromEntries(['vla', 'ai'].map(lane => {
+      const rows = homepage.data.filter(it => it.sources?.some(s => s.platform === `PULSAR ${lane.toUpperCase()}`));
+      return [lane, { total: rows.length, domains: Object.fromEntries([...TWO_DOMAINS].map(domain => [domain, rows.filter(it => it.category === domain).length])) }];
+    }));
+    fs.writeFileSync(path.join(publicDir, 'pulsar-source-status.json'), JSON.stringify(report.steps.pulsar, null, 2));
+  }
+  homepage.meta.pulsar = report.steps.pulsar || null;
 
   // 7.2) 摘要回填（不虚构）：上游摘要为空时，用本地 archive 同 id/url 的真实 summary 回填；
   //      仍缺则 UI 显示「标题信息不足，暂无摘要」，绝不编造或全量付费生成。

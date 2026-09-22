@@ -7,6 +7,10 @@ export function assessNewsReport(report) {
   // base 是旧文件；来源状态、OPML 清单和 LLM 评分也不算新新闻请求。
   const freshSources = ['latest24h', 'latest7d'].filter(name => endpoints[name]?.status === 'ok');
   if (report?.steps?.benchmark?.ok === true) freshSources.push('robodojo');
+  for (const [lane, result] of Object.entries(report?.steps?.pulsar?.lanes || {})) {
+    if (result.status === 'ok') freshSources.push(`pulsar-${lane}`);
+  }
+  if (report?.steps?.newsAPIs?.successfulRequests > 0) freshSources.push('news-apis');
   const failures = [...(report?.failures || [])];
   for (const [name, endpoint] of Object.entries(endpoints)) {
     if (endpoint.status === 'error' && !failures.some(f => f.endpoint === name)) {
@@ -16,6 +20,13 @@ export function assessNewsReport(report) {
   const benchmark = report?.steps?.benchmark;
   if (benchmark && benchmark.ok !== true && !failures.some(f => f.group === 'benchmark')) {
     failures.push({ group: 'benchmark', error: benchmark.error || '公告采集失败，保留历史数据' });
+  }
+  const pulsar = report?.steps?.pulsar;
+  if (pulsar?.processing && !['ok', 'no-candidates'].includes(pulsar.processing.state)) {
+    failures.push({ group: 'pulsar-llm', error: `${pulsar.processing.state}；原始候选保留在后台` });
+  }
+  for (const [lane, result] of Object.entries(pulsar?.lanes || {})) {
+    for (const resource of result.resources || []) if (resource.status === 'error') failures.push({ group: `pulsar-${lane}`, endpoint: resource.url, error: resource.error });
   }
   const warnings = report?.steps?.featuredRank?.warnings || [];
   return { ok: freshSources.length > 0, freshSources, failures, warnings };

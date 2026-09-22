@@ -1,0 +1,6 @@
+{
+  "resourceUrl": "https://raw.githubusercontent.com/sou350121/pulsar-web/main/src/data/_ai_social_2026-09-18.md",
+  "reportDate": "2026-09-18",
+  "lane": "ai",
+  "markdown": "- **[安全事件]** 9/16 AI Agent 基础设施连爆严重 CVE：PraisonAI 未认证工具调用（CVE-2026-57139，严重级 9.8）与「先执行后审批」（CVE-2026-57137），MCP Registry、WeKnora 亦有 RCE/SSRF；开发者社区热议 Agent 运行时安全\n  来源: [知乎 / AI 安全事件日报 / GitHub](no_url)"
+}

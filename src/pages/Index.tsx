@@ -153,9 +153,9 @@ const Index = () => {
   // 可用来源列表（优先 meta，否则从当前数据推导）
   const availableSources = useMemo(() => {
     if (meta?.sourceCounts && Object.keys(meta.sourceCounts).length) {
-      return Object.keys(meta.sourceCounts).sort((a, b) => meta.sourceCounts[b] - meta.sourceCounts[a]);
+      return [...new Set(['PULSAR VLA', 'PULSAR AI', ...Object.keys(meta.sourceCounts).sort((a, b) => meta.sourceCounts[b] - meta.sourceCounts[a])])];
     }
-    const set = new Set<string>();
+    const set = new Set<string>(['PULSAR VLA', 'PULSAR AI']);
     for (const it of rawNews) set.add(it.mediaName || it.source || '未知');
     return Array.from(set).sort();
   }, [meta, rawNews]);
@@ -163,7 +163,7 @@ const Index = () => {
   // 组合筛选（分类已由 useNews 处理；此处叠加 来源/窗口/关键词）
   const filtered = useMemo(() => {
     let list = news;
-    if (selectedSource !== 'all') list = list.filter((it) => (it.mediaName || it.source) === selectedSource);
+    if (selectedSource !== 'all') list = list.filter((it) => (it.mediaName || it.source) === selectedSource || it.sources?.some(s => s.platform === selectedSource));
     if (dateWindow != null) list = list.filter((it) => withinWindowClient(it.publishedAt, dateWindow));
     const kw = keyword.trim().toLowerCase();
     if (kw) {

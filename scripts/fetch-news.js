@@ -1,7 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 import { generateAISummary } from './ai-summary.js';
-import { classifyText, newsApiQuery, currentsKeywords, serviceQuery, newsDataQuery } from './news-matcher.js';
+import { classifyText, newsApiQuery, currentsKeywords, serviceQuery, apiQueries } from './news-matcher.js';
 
 // 翻译函数
 async function translateText(text, targetLang = 'zh') {
@@ -123,9 +123,9 @@ async function fetchNews() {
   // 复用共享两领域 query：按 llm / embodied 独立遍历（每服务最多 2 次），
   // 同一服务内两领域都请求，避免具身智能被遗漏。q 使用 encodeURIComponent 编码。
   if (newsApiOrgKey) {
-    for (const domain of ['llm', 'embodied']) {
+    for (const { domain, query } of ['llm', 'embodied'].flatMap(domain => apiQueries('newsapi', domain, 'en').map(query => ({ domain, query })))) {
       try {
-        const q = encodeURIComponent(serviceQuery(domain, 'en'));
+        const q = encodeURIComponent(query);
         console.log(`正在尝试NewsAPI.org (${domain})...`);
         const response = await fetch(
           `https://newsapi.org/v2/everything?q=${q}&language=en&sortBy=publishedAt&from=${fromDate}&pageSize=50&apiKey=${newsApiOrgKey}`
@@ -207,10 +207,10 @@ async function fetchNews() {
   // 复用共享两领域 query，按 llm / embodied 独立遍历（每服务最多 2 次）；
   // 保留原有备用数量阈值（allNews.length < 50），阈值内同一服务两领域都请求。
   if (newsdataApiKey && allNews.length < 50) {
-    for (const domain of ['llm', 'embodied']) {
+    for (const { domain, query } of ['llm', 'embodied'].flatMap(domain => apiQueries('newsdata', domain, 'en').map(query => ({ domain, query })))) {
       try {
-        // NewsData 免费套餐 q 长度上限 100 字符，使用共享短查询；size 上限取 10（免费套餐）。
-        const q = encodeURIComponent(newsDataQuery(domain, 'en'));
+        // NewsData每条查询仍不超过100字符。
+        const q = encodeURIComponent(query);
         console.log(`正在尝试NewsData API (${domain})...`);
         const response = await fetch(
           `https://newsdata.io/api/1/news?apikey=${newsdataApiKey}&q=${q}&language=en&size=10`
