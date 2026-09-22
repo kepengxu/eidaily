@@ -1,0 +1,194 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ============================================
+   AI推 · Editorial Swiss 设计系统
+   调性：新闻编辑的权威感 × 瑞士网格的精准
+   字体：Noto Serif SC (标题) + Noto Sans SC (正文) + DM Mono (标签)
+   ============================================ */
+
+@layer base {
+  :root {
+    /* ===== 底色 · 暖白 ===== */
+    --background: 38 20% 95%;              /* #F9F7F4 暖白基底 */
+    --foreground: 24 9% 10%;               /* #1C1917 深棕文字 */
+
+    --card: 0 0% 100%;                     /* #FFFFFF 纯白卡片 */
+    --card-foreground: 24 9% 10%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 24 9% 10%;
+
+    /* ===== 强调色 · 赤陶 ===== */
+    --primary: 12 53% 42%;                 /* #C44D34 赤陶——唯一暖色锚点 */
+    --primary-foreground: 38 20% 95%;
+    --primary-glow: 12 53% 50%;
+
+    --secondary: 30 8% 42%;               /* #6B6560 暖灰副色 */
+    --secondary-foreground: 38 20% 95%;
+
+    --muted: 38 10% 90%;                   /* 柔灰底 */
+    --muted-foreground: 30 5% 42%;         /* #6B6560 副文字 */
+
+    --accent: 12 53% 42%;                  /* = primary */
+    --accent-foreground: 38 20% 95%;
+
+    /* ===== 分类色 ===== */
+    --ai-color: 22 57% 43%;               /* 铜棕 #B8612E 中国AI */
+    --tech-color: 90 15% 35%;              /* 苔绿 #5C6E4A 科技 */
+    --economy-color: 200 20% 38%;          /* 钢蓝 #4A6572 国际AI */
+    --analysis-color: 300 10% 48%;         /* 灰紫 #8B6B84 AI趣味 */
+
+    --destructive: 0 55% 45%;
+    --destructive-foreground: 38 20% 95%;
+
+    /* ===== 边框 · 瑞士网格 1px ===== */
+    --border: 30 10% 88%;                  /* #E6E2DD */
+    --input: 30 10% 88%;
+    --ring: 12 53% 42%;
+
+    /* ===== 渐变 · 极简 ===== */
+    --gradient-primary: none;
+    --gradient-hero: none;
+    --gradient-card: none;
+    --gradient-ai: none;
+    --gradient-tech: none;
+    --gradient-economy: none;
+    --gradient-analysis: none;
+
+    /* ===== 阴影 · 极轻 ===== */
+    --shadow-soft: none;
+    --shadow-medium: 0 1px 3px hsl(24 9% 10% / 0.04);
+    --shadow-large: 0 2px 8px hsl(24 9% 10% / 0.06);
+
+    /* ===== 瑞士网格：无圆角 ===== */
+    --radius: 0rem;
+
+    --sidebar-background: 38 20% 97%;
+    --sidebar-foreground: 24 9% 10%;
+    --sidebar-primary: 12 53% 42%;
+    --sidebar-primary-foreground: 38 20% 95%;
+    --sidebar-accent: 38 10% 90%;
+    --sidebar-accent-foreground: 24 9% 10%;
+    --sidebar-border: 30 10% 88%;
+    --sidebar-ring: 12 53% 42%;
+  }
+
+  .dark {
+    --background: 24 9% 6%;
+    --foreground: 38 10% 88%;
+
+    --card: 24 9% 9%;
+    --card-foreground: 38 10% 88%;
+
+    --popover: 24 9% 9%;
+    --popover-foreground: 38 10% 88%;
+
+    --primary: 12 53% 48%;
+    --primary-foreground: 24 9% 6%;
+
+    --secondary: 30 5% 28%;
+    --secondary-foreground: 38 10% 88%;
+
+    --muted: 24 9% 16%;
+    --muted-foreground: 30 5% 55%;
+
+    --accent: 12 53% 48%;
+    --accent-foreground: 24 9% 6%;
+
+    --destructive: 0 55% 40%;
+    --destructive-foreground: 38 10% 88%;
+
+    --border: 24 9% 18%;
+    --input: 24 9% 18%;
+    --ring: 12 53% 48%;
+
+    --sidebar-background: 24 9% 5%;
+    --sidebar-foreground: 38 10% 88%;
+    --sidebar-primary: 12 53% 48%;
+    --sidebar-primary-foreground: 24 9% 6%;
+    --sidebar-accent: 24 9% 16%;
+    --sidebar-accent-foreground: 38 10% 88%;
+    --sidebar-border: 24 9% 16%;
+    --sidebar-ring: 12 53% 48%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Noto Sans SC', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-overflow-scrolling: touch;
+    touch-action: pan-y;
+    overscroll-behavior: contain;
+  }
+
+  /* 衬线标题 */
+  h1, h2, h3, .font-serif {
+    font-family: 'Noto Serif SC', 'Georgia', 'Times New Roman', serif;
+  }
+
+  /* Mono 标签 */
+  .font-mono, code, pre, .mono-label {
+    font-family: 'DM Mono', 'SF Mono', 'Cascadia Code', 'Consolas', monospace;
+  }
+
+  .mobile-scroll-container {
+    -webkit-overflow-scrolling: touch;
+    overflow-scrolling: touch;
+    touch-action: pan-y;
+    overscroll-behavior-y: contain;
+    position: relative;
+  }
+
+  html {
+    overflow: hidden;
+    height: 100%;
+  }
+
+  body {
+    overflow: auto;
+    height: 100%;
+    position: relative;
+  }
+
+  @media (max-width: 768px) {
+    * {
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    body {
+      -webkit-touch-callout: none;
+      -webkit-user-select: none;
+      -webkit-text-size-adjust: none;
+    }
+
+    p, span, div[class*="text"], h1, h2, h3, h4, h5, h6 {
+      -webkit-user-select: text;
+      user-select: text;
+    }
+  }
+}
+
+@layer utilities {
+  .line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .line-clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+}

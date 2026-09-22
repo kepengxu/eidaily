@@ -1,0 +1,40 @@
+{
+  "generated_at": "2026-09-21T02:16:18.838Z",
+  "sites": [
+    { "site_id": "techurls", "site_name": "TechURLs", "ok": true, "item_count": 405, "duration_ms": 493, "error": null },
+    { "site_id": "xinzhiyuan", "site_name": "新智元", "ok": true, "item_count": 88, "duration_ms": 300, "error": null },
+    { "site_id": "qbitai", "site_name": "量子位", "ok": true, "item_count": 76, "duration_ms": 320, "error": null },
+    { "site_id": "unitree-blog", "site_name": "宇树科技", "ok": true, "item_count": 12, "duration_ms": 210, "error": null },
+    { "site_id": "arxiv-daily", "site_name": "arXivDaily", "ok": true, "item_count": 60, "duration_ms": 400, "error": null },
+    { "site_id": "finance-news", "site_name": "财经速递", "ok": true, "item_count": 5, "duration_ms": 250, "error": null },
+    { "site_id": "math-blog", "site_name": "数学随笔", "ok": true, "item_count": 3, "duration_ms": 200, "error": null },
+    { "site_id": "fourier-robotics", "site_name": "傅利叶智能", "ok": true, "item_count": 7, "duration_ms": 260, "error": null },
+    { "site_id": "future-site", "site_name": "未来社", "ok": true, "item_count": 1, "duration_ms": 180, "error": null },
+    { "site_id": "nodate-site", "site_name": "无日期源", "ok": true, "item_count": 2, "duration_ms": 190, "error": null },
+    { "site_id": "newsapi-style", "site_name": "NewsAPI.org", "ok": true, "item_count": 40, "duration_ms": 500, "error": null },
+    { "site_id": "tool-eng", "site_name": "工具工程周刊", "ok": true, "item_count": 9, "duration_ms": 230, "error": null },
+    { "site_id": "missing-title", "site_name": "佚名", "ok": true, "item_count": 0, "duration_ms": 150, "error": null },
+    { "site_id": "aihubtoday", "site_name": "AIHubToday", "ok": false, "item_count": 0, "duration_ms": 12000, "error": "timeout" }
+  ],
+  "successful_sites": 13,
+  "failed_sites": ["aihubtoday"],
+  "zero_item_sites": ["bestblogs", "aihot", "youtube"],
+  "fetched_raw_items": 8044,
+  "items_before_topic_filter": 36017,
+  "items_in_24h": 12,
+  "rss_opml": {
+    "enabled": true,
+    "path": "data/opml-feeds.json",
+    "feed_total": 70,
+    "effective_feed_total": 68,
+    "ok_feeds": 64,
+    "failed_feeds": 2,
+    "zero_item_feeds": 3,
+    "skipped_feeds": 1,
+    "replaced_feeds": 2,
+    "feeds": [
+      { "site_id": "opmlrss:1", "site_name": "OPML RSS", "feed_title": "AI at Meta(@AIatMeta)", "feed_url": "https://x.example/rss/meta", "ok": true, "item_count": 50, "skipped": false, "replaced": false },
+      { "site_id": "opmlrss:2", "site_name": "OPML RSS", "feed_title": "AI SDK(@aisdk)", "feed_url": "https://x.example/rss/aisdk", "ok": true, "item_count": 50, "skipped": false, "replaced": false }
+    ]
+  }
+}

@@ -1,0 +1,38 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+node_modules
+dist
+dist-ssr
+*.local
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# 环境变量与密钥
+*.env
+.env
+.env.local
+!.env.example
+
+# 服务端生成产物（含双域精选评分缓存：内容hash+model+promptVersion，非 public，不入库）
+outputs/*
+!outputs/disabled-workflows/
+
+# 未引用的旧服务含未知凭证，仅保留本地，禁止公开提交
+/src/api/wechatSignatureApi.ts
+/src/services/zhipuAIService.ts

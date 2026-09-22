@@ -1,0 +1,92 @@
+{
+  "llm": {
+    "strong": [
+      "大模型", "大语言模型", "语言模型", "多模态大模型", "推理模型",
+      "预训练大模型", "对话大模型", "基座模型", "生成式大模型",
+      "LLM", "large language model", "foundation model", "generative AI",
+      "reasoning model", "multimodal model", "vision-language model",
+      "coding model", "AI agent", "tool use", "RAG"
+    ],
+    "entities": [
+      "ChatGPT", "GPT", "GPT-4", "GPT-5", "Claude", "DeepSeek", "Kimi",
+      "Qwen", "GLM", "Doubao", "Hunyuan", "ERNIE", "MiniMax", "StepFun",
+      "Moonshot", "OpenAI", "Anthropic", "Llama", "Mistral", "Gemini",
+      "Google DeepMind", "Meta AI", "月之暗面", "通义千问", "文心一言",
+      "讯飞星火", "百川智能", "智谱", "阶跃星辰", "零一万物", "混元",
+      "豆包", "百度文心", "阿里通义", "Cohere", "xAI", "Grok",
+      "深度求索", "Moonshot AI"
+    ]
+  },
+  "embodied": {
+    "strong": [
+      "具身智能", "具身AI", "具身大模型", "机器人", "人形机器人", "双足机器人",
+      "四足机器人", "灵巧手", "机械臂", "操作臂", "视觉语言动作",
+      "视觉-语言-动作", "视觉语言导航", "多模态机器人", "机器人学习",
+      "机器人操作", "移动操作", "灵巧操作", "运动规划", "模仿学习",
+      "示教学习", "遥操作", "触觉", "机器人导航", "自主导航",
+      "空间智能", "仿真到现实", "机器人仿真", "通用机器人",
+      "embodied ai", "physical ai", "humanoid", "robot", "robots",
+      "robotics", "robotic", "embodied", "vision-language-action",
+      "vision language action", "vision-language navigation",
+      "vision language navigation", "vision-and-language navigation",
+      "ObjectNav", "PointNav", "双臂操作", "具身人工智能", "物理人工智能",
+      "具身感知", "数据评测", "embodied artificial intelligence",
+      "physical artificial intelligence", "robot perception",
+      "embodied perception", "robot learning", "robot foundation model",
+      "robotic foundation model", "dexterous manipulation",
+      "mobile manipulation", "bimanual manipulation", "diffusion policy",
+      "sim-to-real", "cross-embodiment", "robot world model",
+      "robot dataset", "teleoperation"
+    ],
+    "entities": [
+      "OpenVLA", "GR00T", "Gemini Robotics", "Unitree", "AgiBot",
+      "Figure AI", "Physical Intelligence", "Skild AI", "Galbot", "Galaxea",
+      "X Square", "UBTECH", "Fourier", "智元机器人", "宇树", "银河通用",
+      "智元", "星海图", "自变量机器人", "优必选", "傅利叶",
+      "RoboTwin", "RoboCasa", "SimplerEnv", "ManiSkill",
+      "Open X-Embodiment", "RT-X", "RT-1", "RT-2", "pi0", "pi0.5"
+    ],
+    "ambiguous": [
+      "ACT", "PI", "RDT", "Octo", "CALVIN", "Habitat",
+      "VLA", "VLN", "任务规划", "运动控制", "世界模型"
+    ]
+  },
+  "roboticsAnchors": [
+    "robot", "robots", "robotics", "robotic", "humanoid", "embodied",
+    "embodied ai", "physical ai", "manipulation", "grasping", "robot learning",
+    "robot foundation", "teleoperation", "locomotion", "dexterous",
+    "bimanual", "sim-to-real", "vision-language", "robot dataset",
+    "cross-embodiment", "robot world model",
+    "机器人", "具身", "机械臂", "导航", "人形", "双臂"
+  ],
+  "queries": {
+    "domesticChinese": {
+      "llm": [
+        "大模型", "大语言模型", "深度求索", "DeepSeek", "月之暗面", "Kimi",
+        "通义千问", "文心一言", "智谱", "GLM", "豆包", "混元", "百川",
+        "MiniMax", "阶跃星辰", "零一万物", "讯飞星火", "商汤"
+      ],
+      "embodied": [
+        "具身智能", "具身AI", "人形机器人", "宇树", "智元机器人", "银河通用",
+        "机器人操作", "灵巧手", "遥操作", "VLA", "VLN", "robot foundation model"
+      ]
+    },
+    "internationalEnglish": {
+      "llm": [
+        "ChatGPT", "Claude", "DeepSeek", "Kimi", "Qwen", "GLM", "Doubao",
+        "Hunyuan", "ERNIE", "MiniMax", "StepFun", "Moonshot", "GPT-5",
+        "GPT-4", "Gemini", "Llama", "OpenAI", "Anthropic",
+        "large language model", "LLM"
+      ],
+      "embodied": [
+        "embodied AI", "physical AI", "humanoid robot", "VLA", "VLN",
+        "vision-language-action", "vision-language navigation",
+        "vision-and-language navigation", "robotics", "robot learning",
+        "robot foundation model", "dexterous manipulation",
+        "mobile manipulation", "sim-to-real", "OpenVLA", "GR00T",
+        "Gemini Robotics", "Unitree", "AgiBot", "Figure AI",
+        "Physical Intelligence", "Skild AI", "teleoperation", "robot dataset"
+      ]
+    }
+  }
+}

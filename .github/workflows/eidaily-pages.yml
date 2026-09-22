@@ -1,0 +1,121 @@
+name: EI Daily Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+  schedule:
+    - cron: '30 1 * * *'
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: eidaily-pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - run: npm ci
+      - name: 恢复服务端缓存（不进入 Pages）
+        if: github.event_name != 'push'
+        uses: actions/cache@v4
+        with:
+          path: outputs/*cache.json
+          key: eidaily-news-cache-${{ runner.os }}-${{ github.run_id }}-${{ github.run_attempt }}
+          restore-keys: |
+            eidaily-news-cache-${{ runner.os }}-
+      - name: 清除本次运行前的旧报告
+        if: github.event_name != 'push'
+        run: node -e "require('node:fs').rmSync('outputs/unified-news-validation.json', { force:true })"
+      - name: 采集新闻
+        id: collect
+        if: github.event_name != 'push'
+        env:
+          NEWSAPI_ORG_KEY: ${{ secrets.NEWSAPI_ORG_KEY }}
+          NEWSDATA_API_KEY: ${{ secrets.NEWSDATA_API_KEY }}
+          LLM_API_KEY: ${{ secrets.LLM_API_KEY }}
+          LLM_BASE_URL: ${{ secrets.LLM_BASE_URL }}
+          LLM_MODEL: ${{ secrets.LLM_MODEL }}
+        run: npm run update-news
+      - name: 检查实际采集报告并写入摘要
+        if: always() && github.event_name != 'push' && steps.collect.outcome != 'skipped'
+        env:
+          COLLECT_OUTCOME: ${{ steps.collect.outcome }}
+        run: |
+          node scripts/check-news-report.mjs
+          if [ "$COLLECT_OUTCOME" != "success" ]; then
+            printf '\n采集进程未成功退出，禁止提交和发布。\n' >> "$GITHUB_STEP_SUMMARY"
+            exit 1
+          fi
+      - name: 更新成功采集的版本标记
+        if: github.event_name != 'push'
+        run: |
+          node --input-type=module <<'NODE'
+          import fs from 'node:fs';
+          const file = 'public/version.json';
+          const old = JSON.parse(fs.readFileSync(file, 'utf8'));
+          const now = new Date().toISOString();
+          fs.writeFileSync(file, JSON.stringify({ ...old, version: `news-${process.env.GITHUB_RUN_ID}-${process.env.GITHUB_RUN_ATTEMPT}`, buildTime: now, lastUpdate: now, updateInterval: '每日北京时间09:30', source: 'unified-news-pipeline' }, null, 2) + '\n');
+          NODE
+      - name: 构建 Pages
+        env:
+          PAGES_BASE_PATH: /eidaily/
+        run: npm run build
+      - name: 清理公开产物
+        run: node scripts/prepare-pages.mjs
+      - name: 仅提交明确允许的有效新闻数据
+        if: github.event_name != 'push'
+        run: |
+          node --input-type=module <<'NODE'
+          import fs from 'node:fs';
+          import { execFileSync } from 'node:child_process';
+          const files = ['public/news-data.json', 'public/news-archive.json', 'public/robodojo-news.json', 'public/version.json'];
+          if (fs.existsSync('public/suyxh-source-status.json')) files.push('public/suyxh-source-status.json');
+          const history = 'public/robodojo-news-history';
+          if (fs.existsSync(history)) {
+            for (const name of fs.readdirSync(history)) {
+              if (/^\d{4}-\d{2}-\d{2}\.json$/.test(name)) files.push(`${history}/${name}`);
+            }
+          }
+          for (const file of files) {
+            if (!fs.lstatSync(file).isFile()) throw new Error(`不是普通数据文件：${file}`);
+            JSON.parse(fs.readFileSync(file, 'utf8'));
+          }
+          execFileSync('git', ['add', '--', ...files], { stdio: 'inherit' });
+          NODE
+          if ! git diff --cached --quiet; then
+            git config user.name 'github-actions[bot]'
+            git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+            git commit -m 'chore: update daily news'
+            git push origin HEAD:main
+          fi
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: 部署 Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

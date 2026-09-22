@@ -1,0 +1,23 @@
+[
+  {
+    "name": "中文博客",
+    "feeds": [
+      { "name": "量子位", "url": "https://www.qbitai.com/feed" },
+      { "name": "宝玉的分享", "url": "https://baoyu.io/feed.xml" },
+      { "name": "爱范儿", "url": "http://www.ifanr.com/feed" }
+    ]
+  },
+  {
+    "name": "英文博客",
+    "feeds": [
+      { "name": "AI at Meta", "url": "https://x.example/rss/meta" },
+      { "name": "AI SDK", "url": "https://x.example/rss/aisdk" }
+    ]
+  },
+  {
+    "name": "论文",
+    "feeds": [
+      { "name": "arXiv AI", "url": "https://arxiv.org/rss/cs.AI" }
+    ]
+  }
+]

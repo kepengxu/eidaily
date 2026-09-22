@@ -1,0 +1,62 @@
+{
+  "generated_at": "2026-09-21T02:16:18.838Z",
+  "window_hours": 168,
+  "total_items": 5,
+  "source_count": 385,
+  "site_count": 14,
+  "topic_filter": "ai_tech_robotics",
+  "items": [
+    {
+      "id": "a1001",
+      "site_id": "xinzhiyuan",
+      "site_name": "新智元",
+      "source": "新智元",
+      "title": "OpenAI 发布 GPT-5.2 多模态大模型，推理能力大幅提升",
+      "url": "https://xinzhiyuan.example.com/p/1",
+      "published_at": "2026-09-21T01:10:00Z",
+      "first_seen_at": "2026-09-21T02:16:18.838Z",
+      "last_seen_at": "2026-09-21T02:16:18.838Z",
+      "title_zh": "OpenAI 发布 GPT-5.2 多模态大模型，推理能力大幅提升",
+      "title_bilingual": "OpenAI 发布 GPT-5.2 多模态大模型，推理能力大幅提升"
+    },
+    {
+      "id": "a1003",
+      "site_id": "unitree-blog",
+      "site_name": "宇树科技",
+      "source": "宇树科技",
+      "title": "宇树发布新一代人形机器人 H2，支持 Dexterous Manipulation",
+      "url": "https://unitree.example.com/blog/h2",
+      "published_at": "2026-09-20T22:00:00Z",
+      "first_seen_at": "2026-09-21T02:16:18.838Z",
+      "last_seen_at": "2026-09-21T02:16:18.838Z",
+      "title_zh": "宇树发布新一代人形机器人 H2，支持灵巧操作",
+      "title_bilingual": "宇树发布新一代人形机器人 H2，支持灵巧操作"
+    },
+    {
+      "id": "b2001",
+      "site_id": "llm-weekly",
+      "site_name": "大模型周刊",
+      "source": "大模型周刊",
+      "title": "智谱 GLM-5 发布：长上下文与 Agent 能力升级",
+      "url": "https://glmweekly.example.com/p/2001",
+      "published_at": "2026-09-18T10:00:00Z",
+      "first_seen_at": "2026-09-21T02:16:18.838Z",
+      "last_seen_at": "2026-09-21T02:16:18.838Z",
+      "title_zh": "智谱 GLM-5 发布：长上下文与 Agent 能力升级",
+      "title_bilingual": "智谱 GLM-5 发布：长上下文与 Agent 能力升级"
+    },
+    {
+      "id": "b2002",
+      "site_id": "embodied-lab",
+      "site_name": "具身实验室",
+      "source": "具身实验室",
+      "title": "RoboDojo 新增 50 个真实机器人操作评测任务",
+      "url": "https://robodojo.example.com/p/2002",
+      "published_at": "2026-09-17T12:00:00Z",
+      "first_seen_at": "2026-09-21T02:16:18.838Z",
+      "last_seen_at": "2026-09-21T02:16:18.838Z",
+      "title_zh": "RoboDojo 新增 50 个真实机器人操作评测任务",
+      "title_bilingual": "RoboDojo 新增 50 个真实机器人操作评测任务"
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "last_updated": "2026-08-10",
+  "results": [
+    {
+      "model": "susie__ghilglue",
+      "display_name": "SuSIE (GHIL-Glue)",
+      "name_in_paper": "SuSIE",
+      "benchmark": "calvin",
+      "overall_score": 2.94
+    },
+    {
+      "model": "susie__ghilglue",
+      "display_name": "SuSIE (GHIL-Glue)",
+      "name_in_paper": "SuSIE",
+      "benchmark": "libero",
+      "overall_score": 75.3
+    },
+    {
+      "model": "rt1__abc",
+      "display_name": "RT-1",
+      "name_in_paper": "RT-1",
+      "benchmark": "calvin",
+      "overall_score": 1.2
+    },
+    {
+      "model": "octo__base",
+      "display_name": "Octo",
+      "benchmark": "libero",
+      "overall_score": null
+    },
+    {
+      "benchmark": "calvin",
+      "overall_score": 9.9,
+      "name_in_paper": "NoModelField"
+    },
+    {
+      "model": { "bad": "object" },
+      "display_name": "Broken",
+      "benchmark": "calvin",
+      "overall_score": 5.0
+    }
+  ]
+}
