@@ -1,0 +1,147 @@
+{
+  "fetchedAt": "2026-09-22T08:14:33.553Z",
+  "windowHours": 168,
+  "lanes": {
+    "vla": {
+      "resources": [
+        {
+          "url": "https://raw.githubusercontent.com/sou350121/pulsar-web/main/src/data/vla-social-intel.json",
+          "status": "ok"
+        },
+        {
+          "url": "https://raw.githubusercontent.com/sou350121/pulsar-web/main/src/data/_vla_social_2026-09-22.md",
+          "status": "ok"
+        },
+        {
+          "url": "https://raw.githubusercontent.com/sou350121/pulsar-web/main/src/data/_vla_social_2026-09-21.md",
+          "status": "ok"
+        },
+        {
+          "url": "https://raw.githubusercontent.com/sou350121/pulsar-web/main/src/data/_vla_social_2026-09-20.md",
+          "status": "ok"
+        },
+        {
+          "url": "https://raw.githubusercontent.com/sou350121/pulsar-web/main/src/data/_vla_social_2026-09-19.md",
+          "status": "ok"
+        },
+        {
+          "url": "https://raw.githubusercontent.com/sou350121/pulsar-web/main/src/data/_vla_social_2026-09-18.md",
+          "status": "ok"
+        },
+        {
+          "url": "https://raw.githubusercontent.com/sou350121/pulsar-web/main/src/data/_vla_social_2026-09-17.md",
+          "status": "ok"
+        },
+        {
+          "url": "https://raw.githubusercontent.com/sou350121/pulsar-web/main/src/data/_vla_social_2026-09-16.md",
+          "status": "ok"
+        },
+        {
+          "url": "https://raw.githubusercontent.com/sou350121/pulsar-web/main/src/data/_vla_social_2026-09-15.md",
+          "status": "ok"
+        }
+      ],
+      "raw": 105,
+      "normalized": 14,
+      "excluded": {
+        "old": 91
+      },
+      "status": "ok",
+      "jsonDateRange": [
+        "2026-06-18",
+        "2026-09-22"
+      ]
+    },
+    "ai": {
+      "resources": [
+        {
+          "url": "https://raw.githubusercontent.com/sou350121/pulsar-web/main/src/data/ai-social-intel.json",
+          "status": "ok"
+        },
+        {
+          "url": "https://raw.githubusercontent.com/sou350121/pulsar-web/main/src/data/_ai_social_2026-09-22.md",
+          "status": "ok"
+        },
+        {
+          "url": "https://raw.githubusercontent.com/sou350121/pulsar-web/main/src/data/_ai_social_2026-09-21.md",
+          "status": "ok"
+        },
+        {
+          "url": "https://raw.githubusercontent.com/sou350121/pulsar-web/main/src/data/_ai_social_2026-09-20.md",
+          "status": "ok"
+        },
+        {
+          "url": "https://raw.githubusercontent.com/sou350121/pulsar-web/main/src/data/_ai_social_2026-09-19.md",
+          "status": "ok"
+        },
+        {
+          "url": "https://raw.githubusercontent.com/sou350121/pulsar-web/main/src/data/_ai_social_2026-09-18.md",
+          "status": "ok"
+        },
+        {
+          "url": "https://raw.githubusercontent.com/sou350121/pulsar-web/main/src/data/_ai_social_2026-09-17.md",
+          "status": "ok"
+        },
+        {
+          "url": "https://raw.githubusercontent.com/sou350121/pulsar-web/main/src/data/_ai_social_2026-09-16.md",
+          "status": "ok"
+        },
+        {
+          "url": "https://raw.githubusercontent.com/sou350121/pulsar-web/main/src/data/_ai_social_2026-09-15.md",
+          "status": "ok"
+        }
+      ],
+      "raw": 176,
+      "normalized": 7,
+      "excluded": {
+        "old": 98,
+        "unknown-date": 71
+      },
+      "status": "ok",
+      "jsonDateRange": [
+        "2026-02-11",
+        "2026-03-30"
+      ]
+    }
+  },
+  "processing": {
+    "configuredModel": "glm-5.1-mini",
+    "returnedModel": "gpt-5.6-luna",
+    "modelMismatch": true,
+    "input": 21,
+    "ruleDuplicates": 0,
+    "semanticDuplicates": 11,
+    "rejected": 0,
+    "retained": 10,
+    "candidates": 21,
+    "existingCandidates": 40,
+    "requests": 1,
+    "fromCache": false,
+    "state": "ok",
+    "limits": {
+      "new": 40,
+      "perLane": 20,
+      "existing": 40,
+      "concurrency": 2,
+      "timeoutMs": 60000,
+      "retries": 1
+    },
+    "pending": 0
+  },
+  "published": {
+    "vla": {
+      "total": 7,
+      "domains": {
+        "大模型": 0,
+        "具身智能": 7
+      }
+    },
+    "ai": {
+      "total": 7,
+      "domains": {
+        "大模型": 7,
+        "具身智能": 0
+      }
+    }
+  }
+}

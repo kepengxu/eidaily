@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-22T06:51:41.172Z",
+  "generatedAt": "2026-09-22T08:14:33.553Z",
   "upstreamSourceStatus": {
     "generated_at": "2026-09-22T00:22:16.636Z",
     "sites": [
@@ -1447,7 +1447,7 @@
       "url": "https://suyxh.github.io/ai-news-aggregator/data/latest-24h.json",
       "status": "ok",
       "httpStatus": 200,
-      "durationMs": 464,
+      "durationMs": 379,
       "itemCount": 876,
       "generatedAt": "2026-09-22T00:22:16.636Z"
     },
@@ -1455,7 +1455,7 @@
       "url": "https://suyxh.github.io/ai-news-aggregator/data/latest-7d.json",
       "status": "ok",
       "httpStatus": 200,
-      "durationMs": 294,
+      "durationMs": 271,
       "itemCount": 5572,
       "generatedAt": "2026-09-22T00:22:16.636Z"
     },
@@ -1463,7 +1463,7 @@
       "url": "https://suyxh.github.io/ai-news-aggregator/data/source-status.json",
       "status": "ok",
       "httpStatus": 200,
-      "durationMs": 239,
+      "durationMs": 86,
       "itemCount": null,
       "generatedAt": "2026-09-22T00:22:16.636Z"
     },
@@ -1471,7 +1471,7 @@
       "url": "https://suyxh.github.io/ai-news-aggregator/data/opml-feeds.json",
       "status": "ok",
       "httpStatus": 200,
-      "durationMs": 226,
+      "durationMs": 71,
       "itemCount": null,
       "generatedAt": null
     },
@@ -1479,7 +1479,7 @@
       "url": "https://suyxh.github.io/ai-news-aggregator/data/waytoagi-7d.json",
       "status": "error",
       "httpStatus": 404,
-      "durationMs": 233,
+      "durationMs": 95,
       "error": "HTTP 404"
     }
   }

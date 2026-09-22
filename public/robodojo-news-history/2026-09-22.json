@@ -2,7 +2,7 @@
   "status": "ok",
   "source": "https://robodojo-benchmark.com/leaderboard",
   "evidenceUrl": "https://robodojo-benchmark.com/assets/index-D083Af23.js",
-  "fetchedAt": "2026-09-22T06:54:08.056Z",
+  "fetchedAt": "2026-09-22T08:18:06.766Z",
   "dateMeaning": "官网News公告日期，非监测时间或模型发布日期",
   "translation": {
     "enabled": true,
@@ -71,7 +71,7 @@
       "text": "Add OpenWAM-α to the sim leaderboard (17.18 / 11.92%) and the real-world leaderboard (37.6 / 24.4%, contributed by OpenWAM Team).",
       "source": "https://robodojo-benchmark.com/leaderboard#news",
       "id": "rbn:2026-09-05:8a43457fe9476ccab66f57bafcb977cc",
-      "textZh": "将 OpenWAM-α 加入仿真排行榜（17.18 / 11.92%）和现实世界排行榜（37.6 / 24.4%，由 OpenWAM Team 贡献）。",
+      "textZh": "将 OpenWAM-α 加入仿真排行榜（17.18 / 11.92%）和真实世界排行榜（37.6 / 24.4%，由 OpenWAM Team 贡献）。",
       "translationStatus": "ok",
       "translationModel": "gpt-5.6-luna",
       "translationCached": false,
