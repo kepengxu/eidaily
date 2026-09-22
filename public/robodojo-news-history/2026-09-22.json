@@ -2,8 +2,14 @@
   "status": "ok",
   "source": "https://robodojo-benchmark.com/leaderboard",
   "evidenceUrl": "https://robodojo-benchmark.com/assets/index-D083Af23.js",
-  "fetchedAt": "2026-09-21T09:15:16.560Z",
+  "fetchedAt": "2026-09-22T06:54:08.056Z",
   "dateMeaning": "官网News公告日期，非监测时间或模型发布日期",
+  "translation": {
+    "enabled": true,
+    "calledLLM": true,
+    "anyFailed": false,
+    "model": "gpt-5.6-luna"
+  },
   "items": [
     {
       "date": "2026-09-21",
@@ -11,9 +17,9 @@
       "source": "https://robodojo-benchmark.com/leaderboard#news",
       "id": "rbn:2026-09-21:495b77e9183514b69fac2352a57bfd18",
       "textZh": "将 SimpleMemVLA 加入仿真排行榜（12.58 / 9.27%，由 SimpleMemVLA Team 贡献）。",
-      "translationStatus": "cached",
+      "translationStatus": "ok",
       "translationModel": "gpt-5.6-luna",
-      "translationCached": true,
+      "translationCached": false,
       "translationWarnings": []
     },
     {
@@ -22,9 +28,9 @@
       "source": "https://robodojo-benchmark.com/leaderboard#news",
       "id": "rbn:2026-09-20:9b11e063061dbf324d409d4cff1b2b41",
       "textZh": "将 KinRT 加入仿真排行榜（13.02 / 8.80%，由 IIGroup 贡献）。",
-      "translationStatus": "cached",
+      "translationStatus": "ok",
       "translationModel": "gpt-5.6-luna",
-      "translationCached": true,
+      "translationCached": false,
       "translationWarnings": []
     },
     {
@@ -33,9 +39,9 @@
       "source": "https://robodojo-benchmark.com/leaderboard#news",
       "id": "rbn:2026-09-17:656f36777ae71a98b1e14d6c6d505637",
       "textZh": "将 Liber-0 Preview（30.74 / 25.52%）和 Liber-0 Lite（29.24 / 24.23%）加入仿真排行榜，由 LiberAI 贡献。",
-      "translationStatus": "cached",
+      "translationStatus": "ok",
       "translationModel": "gpt-5.6-luna",
-      "translationCached": true,
+      "translationCached": false,
       "translationWarnings": []
     },
     {
@@ -43,10 +49,10 @@
       "text": "Add GPT-6-Astra (28.97 / 22.48%), DeepSeek-Flash (2.99 / 1.92%, 10 episodes / task), and GPT-5.5 (1.13 / 0.88%) to the sim leaderboard, contributed by RoboDojo Team.",
       "source": "https://robodojo-benchmark.com/leaderboard#news",
       "id": "rbn:2026-09-16:ccbb4299419f8600ea09e8e4bf90b3dd",
-      "textZh": "将 GPT-6-Astra（28.97 / 22.48%）、DeepSeek-Flash（2.99 / 1.92%，每项任务 10 episodes）和 GPT-5.5（1.13 / 0.88%）加入仿真排行榜，由 RoboDojo Team 贡献。",
-      "translationStatus": "cached",
+      "textZh": "将 GPT-6-Astra（28.97 / 22.48%）、DeepSeek-Flash（2.99 / 1.92%，10 episodes / task）和 GPT-5.5（1.13 / 0.88%）加入仿真排行榜，由 RoboDojo Team 贡献。",
+      "translationStatus": "ok",
       "translationModel": "gpt-5.6-luna",
-      "translationCached": true,
+      "translationCached": false,
       "translationWarnings": []
     },
     {
@@ -55,9 +61,9 @@
       "source": "https://robodojo-benchmark.com/leaderboard#news",
       "id": "rbn:2026-09-09:1e868985b354373d576a96b784cdf45e",
       "textZh": "将 StarVLA-PI_v3（10.81 / 7.51%）、StarVLA-GR00T（8.25 / 4.67%）和 StarVLA-OFT（8.18 / 4.82%）加入仿真排行榜，由 StarVLA Team 贡献。",
-      "translationStatus": "cached",
+      "translationStatus": "ok",
       "translationModel": "gpt-5.6-luna",
-      "translationCached": true,
+      "translationCached": false,
       "translationWarnings": []
     },
     {
@@ -65,10 +71,10 @@
       "text": "Add OpenWAM-α to the sim leaderboard (17.18 / 11.92%) and the real-world leaderboard (37.6 / 24.4%, contributed by OpenWAM Team).",
       "source": "https://robodojo-benchmark.com/leaderboard#news",
       "id": "rbn:2026-09-05:8a43457fe9476ccab66f57bafcb977cc",
-      "textZh": "将 OpenWAM-α 加入仿真排行榜（17.18 / 11.92%）和真实世界排行榜（37.6 / 24.4%，由 OpenWAM Team 贡献）。",
-      "translationStatus": "cached",
+      "textZh": "将 OpenWAM-α 加入仿真排行榜（17.18 / 11.92%）和现实世界排行榜（37.6 / 24.4%，由 OpenWAM Team 贡献）。",
+      "translationStatus": "ok",
       "translationModel": "gpt-5.6-luna",
-      "translationCached": true,
+      "translationCached": false,
       "translationWarnings": []
     },
     {
@@ -77,9 +83,9 @@
       "source": "https://robodojo-benchmark.com/leaderboard#news",
       "id": "rbn:2026-09-02:e25be2b0caa8c2575250731810c617f9",
       "textZh": "更新 MolmoAct2 的完整仿真评估分数（8.99 / 5.03%，由 MolmoAct2 Team 贡献）。",
-      "translationStatus": "cached",
+      "translationStatus": "ok",
       "translationModel": "gpt-5.6-luna",
-      "translationCached": true,
+      "translationCached": false,
       "translationWarnings": []
     },
     {
@@ -88,9 +94,9 @@
       "source": "https://robodojo-benchmark.com/leaderboard#news",
       "id": "rbn:2026-08-31:9494e8470f3970448f564759d2089864",
       "textZh": "将 Meituan-Robotics-0 加入仿真排行榜（14.95 / 9.53%，由 Meituan Robotics 贡献）。",
-      "translationStatus": "cached",
+      "translationStatus": "ok",
       "translationModel": "gpt-5.6-luna",
-      "translationCached": true,
+      "translationCached": false,
       "translationWarnings": []
     },
     {
@@ -99,9 +105,9 @@
       "source": "https://robodojo-benchmark.com/leaderboard#news",
       "id": "rbn:2026-08-24:7dd62bd66394102da3a04c11b2596495",
       "textZh": "将 DM0.5 加入仿真排行榜（24.90 / 19.34%，由 Dexmal 贡献）。",
-      "translationStatus": "cached",
+      "translationStatus": "ok",
       "translationModel": "gpt-5.6-luna",
-      "translationCached": true,
+      "translationCached": false,
       "translationWarnings": []
     },
     {
@@ -110,9 +116,9 @@
       "source": "https://robodojo-benchmark.com/leaderboard#news",
       "id": "rbn:2026-08-04:4877878ef75ab779443fcb92e81c9b6c",
       "textZh": "将 GalaxeaVLA (G0.5) 加入仿真排行榜（20.23 / 14.88%，由 Galaxea AI 贡献）。",
-      "translationStatus": "cached",
+      "translationStatus": "ok",
       "translationModel": "gpt-5.6-luna",
-      "translationCached": true,
+      "translationCached": false,
       "translationWarnings": []
     },
     {
@@ -121,9 +127,9 @@
       "source": "https://robodojo-benchmark.com/leaderboard#news",
       "id": "rbn:2026-07-31:026030fb9544a331a89882bfddae395c",
       "textZh": "将 VLAct 加入仿真排行榜（10.66 / 7.60%，由 StarVLA Team 贡献）。",
-      "translationStatus": "cached",
+      "translationStatus": "ok",
       "translationModel": "gpt-5.6-luna",
-      "translationCached": true,
+      "translationCached": false,
       "translationWarnings": []
     },
     {
@@ -132,9 +138,9 @@
       "source": "https://robodojo-benchmark.com/leaderboard#news",
       "id": "rbn:2026-07-13:5beeb455321adac23f75ce7c92192bd9",
       "textZh": "将 Xiaomi-Robotics-1 加入仿真排行榜（20.07 / 13.93%，由 Xiaomi Robotics 贡献）。",
-      "translationStatus": "cached",
+      "translationStatus": "ok",
       "translationModel": "gpt-5.6-luna",
-      "translationCached": true,
+      "translationCached": false,
       "translationWarnings": []
     },
     {
@@ -142,15 +148,11 @@
       "text": "Launch the first sim leaderboard with 30 models: Hy-Embodied-0.5-VLA, Spatial Forcing, Pi_05, X-VLA, X-WAM, Xiaomi-Robotics-0, StarVLA, GigaWorld-Policy-0, GalaxeaVLA (G0), LingBot-VLA, EventVLA, AHA-WAM, ABot-M0, Fast-WAM, Pi_0, GROOT-N1.7, InternVLA_A1, SmolVLA (Single Task), LDA-1B, MolmoAct2, GO-1, ACT (Single Task), H-RDT, RDT, DM0, Dexora-1B, A1, Spirit v1.5, TinyVLA, and OpenVLA-OFT.",
       "source": "https://robodojo-benchmark.com/leaderboard#news",
       "id": "rbn:2026-07-06:31f9c5bcca26b83575a732a78753358d",
-      "textZh": "发布首个包含 30 个模型的仿真排行榜：Hy-Embodied-0.5-VLA、Spatial Forcing、Pi_05、X-VLA、X-WAM、Xiaomi-Robotics-0、StarVLA、GigaWorld-Policy-0、GalaxeaVLA (G0)、LingBot-VLA、EventVLA、AHA-WAM、ABot-M0、Fast-WAM、Pi_0、GROOT-N1.7、InternVLA_A1、SmolVLA (Single Task)、LDA-1B、MolmoAct2、GO-1、ACT (Single Task)、H-RDT、RDT、DM0、Dexora-1B、A1、Spirit v1.5、TinyVLA 和 OpenVLA-OFT。",
-      "translationStatus": "cached",
+      "textZh": "发布首个仿真排行榜，共包含 30 个模型：Hy-Embodied-0.5-VLA、Spatial Forcing、Pi_05、X-VLA、X-WAM、Xiaomi-Robotics-0、StarVLA、GigaWorld-Policy-0、GalaxeaVLA (G0)、LingBot-VLA、EventVLA、AHA-WAM、ABot-M0、Fast-WAM、Pi_0、GROOT-N1.7、InternVLA_A1、SmolVLA (Single Task)、LDA-1B、MolmoAct2、GO-1、ACT (Single Task)、H-RDT、RDT、DM0、Dexora-1B、A1、Spirit v1.5、TinyVLA 和 OpenVLA-OFT。",
+      "translationStatus": "ok",
       "translationModel": "gpt-5.6-luna",
-      "translationCached": true,
+      "translationCached": false,
       "translationWarnings": []
     }
-  ],
-  "translatedAt": "2026-09-22T02:25:00.470Z",
-  "translationModel": "glm-5.1-mini",
-  "translationCalledLLM": false,
-  "translationAnyFailed": false
+  ]
 }

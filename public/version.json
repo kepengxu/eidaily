@@ -1,7 +1,7 @@
 {
-  "version": "2.2.0",
-  "buildTime": "2026-09-21T04:31:49Z",
-  "lastUpdate": "2026-09-21T04:31:49Z",
-  "updateInterval": "12小时",
-  "source": "real-collection-2api-5rss"
+  "version": "news-35696737910-1",
+  "buildTime": "2026-09-22T06:54:08.155Z",
+  "lastUpdate": "2026-09-22T06:54:08.155Z",
+  "updateInterval": "每日北京时间08:30",
+  "source": "unified-news-pipeline"
 }
