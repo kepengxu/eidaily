@@ -5,7 +5,7 @@ on:
     branches: [main]
   workflow_dispatch:
   schedule:
-    - cron: '30 0 * * *'
+    - cron: '30 23 * * *'
 
 permissions:
   contents: write
@@ -73,7 +73,7 @@ jobs:
           const file = 'public/version.json';
           const old = JSON.parse(fs.readFileSync(file, 'utf8'));
           const now = new Date().toISOString();
-          fs.writeFileSync(file, JSON.stringify({ ...old, version: `news-${process.env.GITHUB_RUN_ID}-${process.env.GITHUB_RUN_ATTEMPT}`, buildTime: now, lastUpdate: now, updateInterval: '每日北京时间08:30', source: 'unified-news-pipeline' }, null, 2) + '\n');
+          fs.writeFileSync(file, JSON.stringify({ ...old, version: `news-${process.env.GITHUB_RUN_ID}-${process.env.GITHUB_RUN_ATTEMPT}`, buildTime: now, lastUpdate: now, updateInterval: '每日北京时间07:30', source: 'unified-news-pipeline' }, null, 2) + '\n');
           NODE
       - name: 构建 Pages
         env:
