@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-09-22T08:14:33.553Z",
+  "fetchedAt": "2026-09-23T03:07:18.207Z",
   "windowHours": 168,
   "lanes": {
     "vla": {
@@ -7,6 +7,11 @@
         {
           "url": "https://raw.githubusercontent.com/sou350121/pulsar-web/main/src/data/vla-social-intel.json",
           "status": "ok"
+        },
+        {
+          "url": "https://raw.githubusercontent.com/sou350121/pulsar-web/main/src/data/_vla_social_2026-09-23.md",
+          "status": "error",
+          "error": "HTTP 404"
         },
         {
           "url": "https://raw.githubusercontent.com/sou350121/pulsar-web/main/src/data/_vla_social_2026-09-22.md",
@@ -35,16 +40,12 @@
         {
           "url": "https://raw.githubusercontent.com/sou350121/pulsar-web/main/src/data/_vla_social_2026-09-16.md",
           "status": "ok"
-        },
-        {
-          "url": "https://raw.githubusercontent.com/sou350121/pulsar-web/main/src/data/_vla_social_2026-09-15.md",
-          "status": "ok"
         }
       ],
-      "raw": 105,
+      "raw": 103,
       "normalized": 14,
       "excluded": {
-        "old": 91
+        "old": 89
       },
       "status": "ok",
       "jsonDateRange": [
@@ -57,6 +58,11 @@
         {
           "url": "https://raw.githubusercontent.com/sou350121/pulsar-web/main/src/data/ai-social-intel.json",
           "status": "ok"
+        },
+        {
+          "url": "https://raw.githubusercontent.com/sou350121/pulsar-web/main/src/data/_ai_social_2026-09-23.md",
+          "status": "error",
+          "error": "HTTP 404"
         },
         {
           "url": "https://raw.githubusercontent.com/sou350121/pulsar-web/main/src/data/_ai_social_2026-09-22.md",
@@ -85,16 +91,12 @@
         {
           "url": "https://raw.githubusercontent.com/sou350121/pulsar-web/main/src/data/_ai_social_2026-09-16.md",
           "status": "ok"
-        },
-        {
-          "url": "https://raw.githubusercontent.com/sou350121/pulsar-web/main/src/data/_ai_social_2026-09-15.md",
-          "status": "ok"
         }
       ],
-      "raw": 176,
-      "normalized": 7,
+      "raw": 174,
+      "normalized": 4,
       "excluded": {
-        "old": 98,
+        "old": 99,
         "unknown-date": 71
       },
       "status": "ok",
@@ -106,18 +108,18 @@
   },
   "processing": {
     "configuredModel": "glm-5.1-mini",
-    "returnedModel": "gpt-5.6-luna",
-    "modelMismatch": true,
-    "input": 21,
-    "ruleDuplicates": 0,
-    "semanticDuplicates": 11,
+    "returnedModel": null,
+    "modelMismatch": false,
+    "input": 18,
+    "ruleDuplicates": 7,
+    "semanticDuplicates": 0,
     "rejected": 0,
-    "retained": 10,
-    "candidates": 21,
+    "retained": 0,
+    "candidates": 11,
     "existingCandidates": 40,
-    "requests": 1,
+    "requests": 2,
     "fromCache": false,
-    "state": "ok",
+    "state": "failed-raw-preserved",
     "limits": {
       "new": 40,
       "perLane": 20,
@@ -126,7 +128,8 @@
       "timeoutMs": 60000,
       "retries": 1
     },
-    "pending": 0
+    "lastError": "超时或结构化校验失败",
+    "pending": 11
   },
   "published": {
     "vla": {
