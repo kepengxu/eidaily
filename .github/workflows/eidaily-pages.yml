@@ -40,7 +40,7 @@ jobs:
       - run: npm ci
       - name: 恢复服务端缓存（不进入 Pages）
         if: github.event_name != 'push'
-        uses: actions/cache@v4
+        uses: actions/cache/restore@v4
         with:
           path: |
             outputs/*cache.json
@@ -68,6 +68,15 @@ jobs:
           else
             npm run update-news
           fi
+      - name: 保存已提取条目和整理缓存（失败也保留进度）
+        if: always() && github.event_name != 'push'
+        uses: actions/cache/save@v4
+        with:
+          path: |
+            outputs/*cache.json
+            outputs/pulsar-pending.json
+            outputs/pulsar-quarantine.json
+          key: eidaily-news-cache-${{ runner.os }}-${{ github.run_id }}-${{ github.run_attempt }}
       - name: 检查实际采集报告并写入摘要
         if: always() && github.event_name != 'push' && steps.collect.outcome != 'skipped'
         env:
