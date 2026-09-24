@@ -146,8 +146,8 @@ export async function fetchSuYxhAggregator(opts = {}) {
   const jo = await tryFetch('opmlFeeds', endpoints.opmlFeeds);
   if (jo) result.opmlFeeds = jo;
 
-  // 4) waytoagi-7d.json（实际查看：当前返回 HTML/非 JSON → 记为失败，不臆造）
-  await tryFetch('waytoagi7d', endpoints.waytoagi7d);
+  // 固定404端点默认禁用；有效替代路径尚未确认。
+  result.endpoints.waytoagi7d = { status: 'disabled', note: '公开路径固定404，未确认有效替代路径' };
 
   return result;
 }

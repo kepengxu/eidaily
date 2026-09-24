@@ -28,7 +28,7 @@ test('真实AI Markdown fixture规范化与日期隔离', () => {
   assert.equal(r.status, 'ok'); assert.equal(r.item.source, 'PULSAR AI');
   assert.equal(r.item.publishedAt, '2026-09-15T16:00:00.000Z');
   assert.equal(normalizePulsar(raw, { ...a, now, windowHours: 48 }).status, 'old');
-  assert.equal(normalizePulsar({ summary: 'AI agent发布' }, { ...a, now }).status, 'unknown-date');
+  assert.equal(normalizePulsar({ summary: 'AI agent发布' }, { ...a, now }).item.dateBasis, 'source_report');
   assert.equal(normalizePulsar({ summary: '2026-09-23 AI agent发布' }, { ...a, now }).status, 'future');
   assert.equal(eventDate({ summary: '2026-02-30 AI发布' }, a.reportDate), null);
 });
@@ -63,7 +63,7 @@ test('调用模型跨源去重保留已有摘要、非public缓存与失败原�
   const r = await curatePulsar([normalized()], [old], { outputsDir: dir, fetchImpl, cfg, now });
   assert.equal(calls, 1); assert.equal(r.status.semanticDuplicates, 1); assert.equal(r.items.length, 0);
   assert.equal(old.summary, '已有摘要不能被覆盖'); assert.equal(old.sources[0].platform, 'PULSAR VLA'); assert.equal(r.status.modelMismatch, true);
-  const fail = await curatePulsar([normalized()], [], { outputsDir: dir, cfg, now, fetchImpl: async () => { throw new Error('故障'); } });
+  const fail = await curatePulsar([{ ...normalized(), id: 'uncached-revision', reportRevision: 2 }], [], { outputsDir: dir, cfg, now, fetchImpl: async () => { throw new Error('故障'); } });
   assert.equal(fail.status.requests, 2); assert.equal(fail.status.state, 'failed-raw-preserved');
   assert.ok(fs.readFileSync(path.join(dir, 'pulsar-pending.json'), 'utf8').includes('Helix'));
 });

@@ -185,14 +185,14 @@ check('首次 last_seen 不替换最早 publishedAt', () => {
 });
 
 console.log('\n=== 5) adapter fixtures + 失败缓存 ===');
-await checkAsync('实际抓取 fixture，记录 waytoagi 失败，不抛出', async () => {
+await checkAsync('实际抓取 fixture，waytoagi 默认禁用且不计失败', async () => {
   const res = await fetchSuYxhAggregator({ fetchImpl: makeMockFetch(), now: new Date('2026-09-21T12:00:00Z') });
   assert.strictEqual(res.endpoints.latest24h.status, 'ok');
   assert.strictEqual(res.endpoints.latest7d.status, 'ok');
   assert.strictEqual(res.endpoints.sourceStatus.status, 'ok');
   assert.strictEqual(res.endpoints.opmlFeeds.status, 'ok');
-  assert.strictEqual(res.endpoints.waytoagi7d.status, 'error', 'waytoagi 应为失败');
-  assert.ok(res.failures.some((f) => f.endpoint === 'waytoagi7d'), '应记录 waytoagi 失败');
+  assert.strictEqual(res.endpoints.waytoagi7d.status, 'disabled', 'waytoagi 默认禁用');
+  assert.ok(!res.failures.some((f) => f.endpoint === 'waytoagi7d'), '禁用不计为失败');
   assert.ok(res.items.length > 0, '应有并集条目');
   assert.ok(res.upstreamSourceStatus && res.upstreamSourceStatus.failed_sites.includes('aihubtoday'));
 });
@@ -261,7 +261,7 @@ await checkAsync('runPipeline 产出 news-data.json + archive + 校验报告', a
   // 校验报告
   const val = JSON.parse(fs.readFileSync(path.join(outputsDir, 'unified-news-validation.json'), 'utf8'));
   assert.strictEqual(val.counts.futureIsolated, 1, '未来隔离计数=1');
-  assert.ok(val.failures.some((f) => f.endpoint === 'waytoagi7d'), '校验报告含 waytoagi 失败');
+  assert.ok(!val.failures.some((f) => f.endpoint === 'waytoagi7d'), '禁用不计为失败');
   // backup 不应删旧（此轮无可备份，跳过）
 });
 

@@ -12,6 +12,13 @@ export function mergePulsarSource(target, incoming) {
   target.sources = [...new Map(sources.map(s => [JSON.stringify([s.platform, s.url, s.lane]), s])).values()];
   const array = x => Array.isArray(x) ? x : x ? [x] : [];
   target.rawProvenance = [...new Map([...array(target.rawProvenance), ...array(incoming.rawProvenance)].map(p => [JSON.stringify(p), p])).values()];
+  if (target.pulsarLane && incoming.pulsarProcessing && incoming.reportRevision > (target.reportRevision || 0) && target.sourceURL === incoming.sourceURL) {
+    target.summary = incoming.summary;
+    target.content = incoming.content;
+    target.originalText = incoming.originalText;
+    target.reportRevision = incoming.reportRevision;
+    target.pulsarProcessing = incoming.pulsarProcessing;
+  }
   if (!target.summary) target.summary = incoming.summary;
   if (!target.titleZh) target.titleZh = incoming.titleZh;
   return target;
@@ -42,7 +49,7 @@ export function validateCuration(data, candidates, existing) {
   return data.items;
 }
 
-export async function curatePulsar(raw, existing, { cfg = loadLLMConfig(), fetchImpl = fetch, outputsDir, now = new Date() } = {}) {
+async function curatePulsarBatch(raw, existing, { cfg = loadLLMConfig(), fetchImpl = fetch, outputsDir, now = new Date() } = {}) {
   const cachePath = path.join(outputsDir, 'pulsar-cache.json');
   let cache = {};
   try { cache = JSON.parse(fs.readFileSync(cachePath, 'utf8')); } catch { /* 首次无缓存 */ }
@@ -50,13 +57,26 @@ export async function curatePulsar(raw, existing, { cfg = loadLLMConfig(), fetch
     input: raw.length, ruleDuplicates: 0, semanticDuplicates: 0, rejected: 0, retained: 0,
     candidates: 0, existingCandidates: 0, requests: 0, fromCache: false, state: 'no-candidates',
     limits: { new: 40, perLane: 20, existing: 40, concurrency: 2, timeoutMs: 60000, retries: 1 } };
+  const decisions = {};
   const retained = [], pending = [], selected = [], counts = { vla: 0, ai: 0 };
   const urlMap = new Map(), titleMap = new Map();
   const register = it => { const [u, t] = keys(it); if (u) urlMap.set(u, it); if (t) titleMap.set(t, it); };
   existing.forEach(register);
   for (const it of raw) {
     const [u, t] = keys(it); const match = (u && urlMap.get(u)) || (t && titleMap.get(t));
-    if (match) { mergePulsarSource(match, it); status.ruleDuplicates++; continue; }
+    const itemKey = `item:${digest([it.id, it.originalText, it.reportRevision, cfg.model, PULSAR_PROMPT_VERSION])}`;
+    if (cache[itemKey]) {
+      const saved = cache[itemKey];
+      if (saved.rejected) { status.rejected++; continue; }
+      if (saved.item) {
+        const target = match || (saved.targetUrl && urlMap.get(saved.targetUrl)) || (saved.targetTitle && titleMap.get(saved.targetTitle));
+        if (target) mergePulsarSource(target, saved.item);
+        else { retained.push(structuredClone(saved.item)); register(saved.item); }
+        status.ruleDuplicates++; continue;
+      }
+    }
+    decisions[it.id] = itemKey;
+    if (match && !it.reportRevision) { mergePulsarSource(match, it); status.ruleDuplicates++; continue; }
     if (counts[it.lane] >= 20) { pending.push({ reason: 'candidate-budget', item: it }); continue; }
     counts[it.lane]++; selected.push(it); register(it);
   }
@@ -69,7 +89,7 @@ export async function curatePulsar(raw, existing, { cfg = loadLLMConfig(), fetch
     .sort((a, b) => b.score - a.score).slice(0, 40).map(r => ({ ...r.x, id: `existing_${r.i}` }));
   status.existingCandidates = relevantExisting.length;
   const originalById = new Map(relevantExisting.map(x => [x.id, existing[Number(x.id.slice(9))]]));
-  const minimal = x => ({ id: x.id, title: x.title.slice(0, 250), text: (x.originalText || x.summary || '').slice(0, 1500), publishedAt: x.publishedAt, category: x.category, lane: x.lane || null });
+  const minimal = x => ({ id: x.id, title: x.title.slice(0, 250), text: (x.originalText || x.summary || '').slice(0, 1500), publishedAt: x.publishedAt, reportDate: x.reportDate, eventDate: x.eventDate, dateBasis: x.dateBasis, reportRevision: x.reportRevision, category: x.category, lane: x.lane || null });
   const payload = { candidates: selected.map(minimal), existing: relevantExisting.map(minimal) };
   if (Buffer.byteLength(JSON.stringify(payload), 'utf8') > 180000) throw new Error('候选上下文超过180KB限制');
   const key = digest([payload, cfg.model, cfg.baseUrl, PULSAR_PROMPT_VERSION]);
@@ -104,9 +124,10 @@ export async function curatePulsar(raw, existing, { cfg = loadLLMConfig(), fetch
       const answers = new Map(result.map(x => [x.id, x]));
       for (const r of result) {
         const item = byId.get(r.id);
-        if (!r.relevant) { status.rejected++; pending.push({ reason: 'llm-not-relevant', item }); continue; }
+        if (!r.relevant) { cache[decisions[r.id]] = { rejected: true }; status.rejected++; pending.push({ reason: 'llm-not-relevant', item }); continue; }
         item.summary = r.summary; item.category = r.category;
         item.pulsarProcessing = { status: 'llm-curated', model: cfg.model, returnedModel: status.returnedModel, version: PULSAR_PROMPT_VERSION };
+        cache[decisions[r.id]] = { item: structuredClone(item) };
       }
       for (const r of result) {
         if (!r.relevant) continue;
@@ -114,7 +135,10 @@ export async function curatePulsar(raw, existing, { cfg = loadLLMConfig(), fetch
         if (!r.duplicateOf) { retained.push(item); continue; }
         let target = r.duplicateOf;
         while (answers.get(target)?.duplicateOf) target = answers.get(target).duplicateOf;
-        mergePulsarSource(originalById.get(target) || byId.get(target), item);
+        const targetItem = originalById.get(target) || byId.get(target);
+        mergePulsarSource(targetItem, item);
+        const [targetUrl, targetTitle] = keys(targetItem);
+        Object.assign(cache[decisions[r.id]], { targetUrl, targetTitle });
         status.semanticDuplicates++;
       }
     } else {
@@ -125,7 +149,23 @@ export async function curatePulsar(raw, existing, { cfg = loadLLMConfig(), fetch
   status.retained = retained.length; status.pending = pending.length;
   status.modelMismatch = !!status.returnedModel && status.returnedModel !== cfg.model;
   fs.mkdirSync(outputsDir, { recursive: true });
-  fs.writeFileSync(cachePath, JSON.stringify(Object.fromEntries(Object.entries(cache).slice(-100)), null, 2), { mode: 0o600 });
+  fs.writeFileSync(cachePath, JSON.stringify(Object.fromEntries(Object.entries(cache).slice(-5000)), null, 2), { mode: 0o600 });
   fs.writeFileSync(path.join(outputsDir, 'pulsar-pending.json'), JSON.stringify(pending, null, 2), { mode: 0o600 });
   return { items: retained, status };
+}
+
+export async function curatePulsar(raw, existing, options = {}) {
+  const items = [], statuses = [];
+  // 全部近七日报告分批进入原有模型管线，预算不能静默丢掉较早报告。
+  const queues = ['vla', 'ai'].map(lane => raw.filter(it => it.lane === lane));
+  do {
+    const batch = queues.flatMap(queue => queue.splice(0, 20));
+    const result = await curatePulsarBatch(batch, [...existing, ...items], options);
+    items.push(...result.items); statuses.push(result.status);
+  } while (queues.some(queue => queue.length));
+  const status = { ...statuses.at(-1), input: raw.length, retained: items.length, batches: statuses.length };
+  for (const field of ['requests', 'ruleDuplicates', 'semanticDuplicates', 'rejected', 'pending', 'candidates']) status[field] = statuses.reduce((n, s) => n + s[field], 0);
+  status.fromCache = statuses.every(s => s.fromCache || !s.candidates);
+  status.state = statuses.find(s => !['ok', 'no-candidates'].includes(s.state))?.state || (raw.length ? 'ok' : 'no-candidates');
+  return { items, status };
 }

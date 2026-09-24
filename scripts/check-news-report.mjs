@@ -8,7 +8,7 @@ export function assessNewsReport(report) {
   const freshSources = ['latest24h', 'latest7d'].filter(name => endpoints[name]?.status === 'ok');
   if (report?.steps?.benchmark?.ok === true) freshSources.push('robodojo');
   for (const [lane, result] of Object.entries(report?.steps?.pulsar?.lanes || {})) {
-    if (result.status === 'ok') freshSources.push(`pulsar-${lane}`);
+    if (result.status === 'ok' || result.directorySuccess) freshSources.push(`pulsar-${lane}`);
   }
   if (report?.steps?.newsAPIs?.successfulRequests > 0) freshSources.push('news-apis');
   const failures = [...(report?.failures || [])];
@@ -28,8 +28,12 @@ export function assessNewsReport(report) {
   for (const [lane, result] of Object.entries(pulsar?.lanes || {})) {
     for (const resource of result.resources || []) if (resource.status === 'error') failures.push({ group: `pulsar-${lane}`, endpoint: resource.url, error: resource.error });
   }
+  for (const [lane, result] of Object.entries(pulsar?.social?.lanes || {})) {
+    for (const resource of result.resources || []) if (resource.status === 'error') failures.push({ group: `pulsar-social-${lane}`, endpoint: resource.url, error: resource.error });
+  }
   const warnings = report?.steps?.featuredRank?.warnings || [];
-  return { ok: freshSources.length > 0, freshSources, failures, warnings };
+  const pulsarFailed = report?.mode === 'pulsar' && (report.outcome === 'error' || !pulsar?.directorySuccesses);
+  return { ok: freshSources.length > 0 && !pulsarFailed, outcome: report.outcome || 'updated', freshSources, failures, warnings };
 }
 
 export function checkNewsReport(file, summaryFile) {
@@ -42,6 +46,7 @@ export function checkNewsReport(file, summaryFile) {
   }
   const text = [
     '## 新闻采集检查',
+    `本次结果：${result.outcome || 'error'}（有效目录无新增不等于网络错误）。`,
     `本次成功的新闻数据源：${result.freshSources.join('、') || '无'}。`,
     '既有 base、归档、缓存、来源状态和 OPML 清单不计入新请求成功。',
     ...result.failures.map(f => `- 失败 ${f.group || ''}/${f.endpoint || ''}：${f.error || '未知错误'}`),

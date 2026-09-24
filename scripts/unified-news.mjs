@@ -119,7 +119,7 @@ function normalizeLegacyItem(item, now) {
     attribution: sourceEntry.attribution,
     sources: Array.isArray(item?.sources) && item.sources.length ? item.sources : [sourceEntry],
     rawProvenance: item?.rawProvenance || { legacy: true, id: item?.id, source: item?.source, upstreamPlatform: item?.upstreamPlatform },
-    ...(item?.pulsarLane ? { pulsarLane: item.pulsarLane, lane: item.lane, eventPublishedAt: item.eventPublishedAt, fetchedAt: item.fetchedAt, originalText: item.originalText, pulsarProcessing: item.pulsarProcessing } : {}),
+    ...(item?.pulsarLane ? { pulsarLane: item.pulsarLane, lane: item.lane, eventPublishedAt: item.eventPublishedAt, eventDate: item.eventDate, reportDate: item.reportDate, dateBasis: item.dateBasis, sourceURL: item.sourceURL, links: item.links, reportRevision: item.reportRevision, fetchedAt: item.fetchedAt, originalText: item.originalText, pulsarProcessing: item.pulsarProcessing } : {}),
     filterReason: `既有采集(信任原分类 ${category})`,
     firstSeenAt: null,
     lastSeenAt: null,
@@ -242,6 +242,7 @@ export async function runPipeline(opts = {}) {
     publicDir = PUBLIC_DIR,
     outputsDir = OUTPUTS_DIR,
     skipBase = false,
+    pulsarOnly = false,
     runBenchmark = true,
     runRank = true,
     runPulsar = true,
@@ -257,6 +258,7 @@ export async function runPipeline(opts = {}) {
   const backupDir = path.join(outputsDir, 'backup');
 
   const report = {
+    mode: pulsarOnly ? 'pulsar' : 'full',
     generatedAt: now.toISOString(),
     steps: {},
     sources: {},
@@ -305,7 +307,7 @@ export async function runPipeline(opts = {}) {
   report.steps.base = { read: baseRaw.length, normalized: baseNormalized.length, excluded: baseExcluded, future: baseFuture, skipped: skipBase ? 'skip-base' : false };
 
   // 3) 收集 SuYxh（必须实际请求）
-  const suyxh = await fetchSuYxhAggregator({ fetchImpl, now, timeoutMs: 25000 });
+  const suyxh = pulsarOnly ? { items: [], stats: { unionRaw: 0, raw24h: 0, raw7d: 0 }, endpoints: {}, failures: [] } : await fetchSuYxhAggregator({ fetchImpl, now, timeoutMs: 25000 });
   report.steps.suyxh = {
     collectedAt: suyxh.collectedAt,
     rawUnion: suyxh.stats.unionRaw,
@@ -338,12 +340,14 @@ export async function runPipeline(opts = {}) {
   report.futureCount += baseFuture;
 
   // 5) 两API实际采集 + PULSAR有限候选整理，先规则再跨源模型事件去重。
-  const api = runAPIs ? await fetchNewsAPIs({ fetchImpl, now }) : { items: [], requests: [], successfulRequests: 0 };
+  const api = runAPIs && !pulsarOnly ? await fetchNewsAPIs({ fetchImpl, now }) : { items: [], requests: [], successfulRequests: 0 };
   report.steps.newsAPIs = { requests: api.requests, successfulRequests: api.successfulRequests, retained: api.items.length };
-  const allOk = [...baseNormalized, ...suyxhNormalized, ...api.items];
+  const archivedExisting = loadArchive(archivePath)?.items || [];
+  const withKeys = it => ({ ...it, _urlKey: canonicalUrlKey(it.originalUrl || ''), _titleKey: canonicalTitleKey(it.title || '') });
+  const allOk = dedupItems([...archivedExisting, ...baseNormalized, ...suyxhNormalized, ...api.items].map(withKeys)).map(withKeys);
   if (runPulsar) {
     try {
-      const pulsar = await fetchPulsar({ fetchImpl, now });
+      const pulsar = await fetchPulsar({ fetchImpl, now, outputsDir });
       fs.mkdirSync(outputsDir, { recursive: true });
       fs.writeFileSync(path.join(outputsDir, 'pulsar-quarantine.json'), JSON.stringify(pulsar.quarantine, null, 2), { mode: 0o600 });
       const curated = await curatePulsar(pulsar.items, allOk, { fetchImpl, now, outputsDir });
@@ -354,6 +358,20 @@ export async function runPipeline(opts = {}) {
     } catch {
       report.steps.pulsar = { status: 'error', error: 'PULSAR采集或整理失败，保留既有归档' };
       report.failures.push({ group: 'pulsar', error: report.steps.pulsar.error });
+    }
+  }
+  if (pulsarOnly) {
+    report.outcome = report.steps.pulsar?.changedReports > 0 || report.steps.pulsar?.processing?.requests > 0 || report.steps.pulsar?.processing?.retained > 0 ? 'updated' : 'unchanged';
+    report.lastSourceSuccess = report.steps.pulsar?.directorySuccesses > 0 ? now.toISOString() : null;
+    if (!report.lastSourceSuccess || !['ok', 'no-candidates'].includes(report.steps.pulsar?.processing?.state)) {
+      report.outcome = 'error';
+      fs.mkdirSync(outputsDir, { recursive: true });
+      fs.writeFileSync(validationPath, JSON.stringify(report, null, 2));
+      throw new Error('PULSAR目录全部失败或整理失败，禁止发布伪新数据');
+    }
+    if (report.outcome === 'unchanged' && !report.steps.pulsar.processing.retained && !report.steps.pulsar.processing.semanticDuplicates) {
+      fs.writeFileSync(validationPath, JSON.stringify(report, null, 2));
+      return report;
     }
   }
   const merged = dedupItems(allOk);
@@ -474,7 +492,7 @@ export async function runPipeline(opts = {}) {
   }
 
   // 9) 三榜监测（独立步骤，失败仅记录）
-  if (runBenchmark) {
+  if (runBenchmark && !pulsarOnly) {
     try {
       const { runRoboDojoNews: runMonitor } = await import('./robodojo-news.mjs');
       const bm = await runMonitor({ mergeNews: true, quiet: true, now, fetchImpl });
@@ -543,7 +561,7 @@ if (isMain) {
   const noRank = args.includes('--no-rank');
   const maxArg = args.find((a) => a.startsWith('--max-homepage='));
   const maxHomepage = maxArg ? parseInt(maxArg.split('=')[1], 10) || 8000 : 8000;
-  runPipeline({ skipBase, runBenchmark: !noBenchmark, runRank: !noRank, maxHomepage })
+  runPipeline({ skipBase, pulsarOnly: args.includes('--pulsar-only'), runBenchmark: !noBenchmark, runRank: !noRank, maxHomepage })
     .then(() => process.exit(0))
     .catch((e) => {
       log('FATAL', e?.message || e);

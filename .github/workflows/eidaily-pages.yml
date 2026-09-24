@@ -4,8 +4,15 @@ on:
   push:
     branches: [main]
   workflow_dispatch:
+    inputs:
+      mode:
+        description: '采集模式'
+        type: choice
+        options: [full, pulsar]
+        default: full
   schedule:
     - cron: '30 23 * * *'
+    - cron: '0 2 * * *'
 
 permissions:
   contents: write
@@ -54,7 +61,13 @@ jobs:
           LLM_API_KEY: ${{ secrets.LLM_API_KEY }}
           LLM_BASE_URL: ${{ secrets.LLM_BASE_URL }}
           LLM_MODEL: ${{ secrets.LLM_MODEL }}
-        run: npm run update-news
+          UPDATE_MODE: ${{ github.event.schedule == '0 2 * * *' && 'pulsar' || inputs.mode || 'full' }}
+        run: |
+          if [ "$UPDATE_MODE" = "pulsar" ]; then
+            npm run update-news -- --pulsar-only
+          else
+            npm run update-news
+          fi
       - name: 检查实际采集报告并写入摘要
         if: always() && github.event_name != 'push' && steps.collect.outcome != 'skipped'
         env:
@@ -73,7 +86,9 @@ jobs:
           const file = 'public/version.json';
           const old = JSON.parse(fs.readFileSync(file, 'utf8'));
           const now = new Date().toISOString();
-          fs.writeFileSync(file, JSON.stringify({ ...old, version: `news-${process.env.GITHUB_RUN_ID}-${process.env.GITHUB_RUN_ATTEMPT}`, buildTime: now, lastUpdate: now, updateInterval: '每日北京时间07:30', source: 'unified-news-pipeline' }, null, 2) + '\n');
+          const report = JSON.parse(fs.readFileSync('outputs/unified-news-validation.json', 'utf8'));
+          const updated = report.outcome !== 'unchanged';
+          fs.writeFileSync(file, JSON.stringify({ ...old, version: updated ? `news-${process.env.GITHUB_RUN_ID}-${process.env.GITHUB_RUN_ATTEMPT}` : old.version, buildTime: now, lastUpdate: updated ? now : old.lastUpdate, updated, outcome: report.outcome || 'updated', lastSourceSuccess: report.lastSourceSuccess || report.generatedAt, updateInterval: '每日北京时间07:30全量；10:00 PULSAR补更', source: 'unified-news-pipeline', mode: report.mode }, null, 2) + '\n');
           NODE
       - name: 构建 Pages
         env:

@@ -63,6 +63,9 @@ export function mergeIntoArchive(prevArchive, newItems, { now = new Date(), rete
       prev.rawProvenance = [...new Map([...pp, ...np].filter(Boolean).map(p => [JSON.stringify(p), p])).values()];
       // 不替换 publishedAt；仅在缺失时补
       if (!prev.publishedAt && ni.publishedAt) prev.publishedAt = ni.publishedAt;
+      if (prev.pulsarLane && ni.pulsarProcessing && ni.reportRevision > (prev.reportRevision || 0) && prev.sourceURL === ni.sourceURL) {
+        for (const field of ['summary', 'content', 'originalText', 'reportRevision', 'pulsarProcessing']) prev[field] = ni[field];
+      }
       // 优先补非空 summary / titleZh
       if (!prev.summary && ni.summary) prev.summary = ni.summary;
       if (!prev.titleZh && ni.titleZh) prev.titleZh = ni.titleZh;
