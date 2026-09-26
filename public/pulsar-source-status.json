@@ -1,13 +1,17 @@
 {
-  "fetchedAt": "2026-09-26T01:47:32.234Z",
+  "fetchedAt": "2026-09-26T06:59:28.780Z",
   "windowHours": 168,
   "lanes": {
     "ai": {
-      "status": "not_published",
+      "status": "ok",
       "directorySuccess": true,
       "resources": [
         {
           "url": "https://sou350121.github.io/pulsar-web/ai-daily/",
+          "status": "ok"
+        },
+        {
+          "url": "https://sou350121.github.io/pulsar-web/ai-daily/2026-09-26",
           "status": "ok"
         },
         {
@@ -36,6 +40,13 @@
         }
       ],
       "reports": [
+        {
+          "reportDate": "2026-09-26",
+          "url": "https://sou350121.github.io/pulsar-web/ai-daily/2026-09-26",
+          "status": "new",
+          "count": 9,
+          "revision": 1
+        },
         {
           "reportDate": "2026-09-25",
           "url": "https://sou350121.github.io/pulsar-web/ai-daily/2026-09-25",
@@ -79,11 +90,12 @@
           "revision": 1
         }
       ],
-      "raw": 46,
-      "normalized": 46,
-      "changed": 0,
+      "raw": 55,
+      "normalized": 55,
+      "changed": 1,
       "unchanged": 6,
       "reportDates": [
+        "2026-09-26",
         "2026-09-25",
         "2026-09-24",
         "2026-09-23",
@@ -91,14 +103,18 @@
         "2026-09-21",
         "2026-09-20"
       ],
-      "todayStatus": "not_published"
+      "todayStatus": "published"
     },
     "vla": {
-      "status": "not_published",
+      "status": "ok",
       "directorySuccess": true,
       "resources": [
         {
           "url": "https://sou350121.github.io/pulsar-web/vla/",
+          "status": "ok"
+        },
+        {
+          "url": "https://sou350121.github.io/pulsar-web/vla/2026-09-26",
           "status": "ok"
         },
         {
@@ -119,6 +135,13 @@
         }
       ],
       "reports": [
+        {
+          "reportDate": "2026-09-26",
+          "url": "https://sou350121.github.io/pulsar-web/vla/2026-09-26",
+          "status": "new",
+          "count": 30,
+          "revision": 1
+        },
         {
           "reportDate": "2026-09-25",
           "url": "https://sou350121.github.io/pulsar-web/vla/2026-09-25",
@@ -148,21 +171,22 @@
           "revision": 1
         }
       ],
-      "raw": 116,
-      "normalized": 116,
-      "changed": 0,
+      "raw": 146,
+      "normalized": 146,
+      "changed": 1,
       "unchanged": 4,
       "reportDates": [
+        "2026-09-26",
         "2026-09-25",
         "2026-09-24",
         "2026-09-23",
         "2026-09-22"
       ],
-      "todayStatus": "not_published"
+      "todayStatus": "published"
     }
   },
   "social": {
-    "fetchedAt": "2026-09-26T01:47:32.234Z",
+    "fetchedAt": "2026-09-26T06:59:28.780Z",
     "windowHours": 168,
     "lanes": {
       "vla": {
@@ -179,8 +203,8 @@
         },
         "status": "ok",
         "jsonDateRange": [
-          "2026-06-21",
-          "2026-09-25"
+          "2026-06-22",
+          "2026-09-26"
         ]
       },
       "ai": {
@@ -203,21 +227,21 @@
       }
     }
   },
-  "changedReports": 0,
+  "changedReports": 2,
   "directorySuccesses": 2,
   "processing": {
     "configuredModel": "glm-5.1-mini",
     "returnedModel": null,
     "modelMismatch": false,
-    "input": 163,
+    "input": 202,
     "ruleDuplicates": 160,
-    "semanticDuplicates": 0,
+    "semanticDuplicates": 1,
     "rejected": 3,
-    "retained": 0,
-    "candidates": 0,
+    "retained": 38,
+    "candidates": 39,
     "existingCandidates": 0,
-    "requests": 0,
-    "fromCache": true,
+    "requests": 6,
+    "fromCache": false,
     "state": "ok",
     "limits": {
       "new": 40,
@@ -228,20 +252,20 @@
       "retries": 1
     },
     "pending": 0,
-    "batches": 24
+    "batches": 30
   },
   "published": {
     "vla": {
-      "total": 155,
+      "total": 185,
       "domains": {
         "大模型": 0,
-        "具身智能": 155
+        "具身智能": 185
       }
     },
     "ai": {
-      "total": 60,
+      "total": 69,
       "domains": {
-        "大模型": 60,
+        "大模型": 69,
         "具身智能": 0
       }
     }
