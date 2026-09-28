@@ -1,13 +1,17 @@
 {
-  "fetchedAt": "2026-09-28T01:50:49.632Z",
+  "fetchedAt": "2026-09-28T08:07:48.527Z",
   "windowHours": 168,
   "lanes": {
     "ai": {
-      "status": "not_published",
+      "status": "ok",
       "directorySuccess": true,
       "resources": [
         {
           "url": "https://sou350121.github.io/pulsar-web/ai-daily/",
+          "status": "ok"
+        },
+        {
+          "url": "https://sou350121.github.io/pulsar-web/ai-daily/2026-09-28",
           "status": "ok"
         },
         {
@@ -36,6 +40,13 @@
         }
       ],
       "reports": [
+        {
+          "reportDate": "2026-09-28",
+          "url": "https://sou350121.github.io/pulsar-web/ai-daily/2026-09-28",
+          "status": "new",
+          "count": 7,
+          "revision": 1
+        },
         {
           "reportDate": "2026-09-27",
           "url": "https://sou350121.github.io/pulsar-web/ai-daily/2026-09-27",
@@ -79,11 +90,12 @@
           "revision": 1
         }
       ],
-      "raw": 48,
-      "normalized": 48,
-      "changed": 0,
+      "raw": 55,
+      "normalized": 55,
+      "changed": 1,
       "unchanged": 6,
       "reportDates": [
+        "2026-09-28",
         "2026-09-27",
         "2026-09-26",
         "2026-09-25",
@@ -91,7 +103,7 @@
         "2026-09-23",
         "2026-09-22"
       ],
-      "todayStatus": "not_published"
+      "todayStatus": "published"
     },
     "vla": {
       "status": "not_published",
@@ -174,7 +186,7 @@
     }
   },
   "social": {
-    "fetchedAt": "2026-09-28T01:50:49.632Z",
+    "fetchedAt": "2026-09-28T08:07:48.527Z",
     "windowHours": 168,
     "lanes": {
       "vla": {
@@ -191,8 +203,8 @@
         },
         "status": "ok",
         "jsonDateRange": [
-          "2026-06-23",
-          "2026-09-27"
+          "2026-06-24",
+          "2026-09-28"
         ]
       },
       "ai": {
@@ -215,21 +227,21 @@
       }
     }
   },
-  "changedReports": 0,
+  "changedReports": 1,
   "directorySuccesses": 2,
   "processing": {
     "configuredModel": "glm-5.1-mini",
     "returnedModel": null,
     "modelMismatch": false,
-    "input": 197,
+    "input": 204,
     "ruleDuplicates": 195,
-    "semanticDuplicates": 0,
+    "semanticDuplicates": 3,
     "rejected": 2,
-    "retained": 0,
-    "candidates": 0,
+    "retained": 4,
+    "candidates": 7,
     "existingCandidates": 0,
-    "requests": 0,
-    "fromCache": true,
+    "requests": 2,
+    "fromCache": false,
     "state": "ok",
     "limits": {
       "new": 40,
@@ -251,9 +263,9 @@
       }
     },
     "ai": {
-      "total": 77,
+      "total": 83,
       "domains": {
-        "大模型": 77,
+        "大模型": 83,
         "具身智能": 0
       }
     }
