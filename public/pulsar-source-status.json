@@ -1,9 +1,9 @@
 {
-  "fetchedAt": "2026-10-02T07:52:01.385Z",
+  "fetchedAt": "2026-10-03T02:13:38.218Z",
   "windowHours": 168,
   "lanes": {
     "ai": {
-      "status": "ok",
+      "status": "not_published",
       "directorySuccess": true,
       "resources": [
         {
@@ -33,17 +33,13 @@
         {
           "url": "https://sou350121.github.io/pulsar-web/ai-daily/2026-09-27",
           "status": "ok"
-        },
-        {
-          "url": "https://sou350121.github.io/pulsar-web/ai-daily/2026-09-26",
-          "status": "ok"
         }
       ],
       "reports": [
         {
           "reportDate": "2026-10-02",
           "url": "https://sou350121.github.io/pulsar-web/ai-daily/2026-10-02",
-          "status": "new",
+          "status": "unchanged",
           "count": 9,
           "revision": 1
         },
@@ -81,18 +77,11 @@
           "status": "unchanged",
           "count": 7,
           "revision": 1
-        },
-        {
-          "reportDate": "2026-09-26",
-          "url": "https://sou350121.github.io/pulsar-web/ai-daily/2026-09-26",
-          "status": "unchanged",
-          "count": 9,
-          "revision": 1
         }
       ],
-      "raw": 53,
-      "normalized": 53,
-      "changed": 1,
+      "raw": 44,
+      "normalized": 44,
+      "changed": 0,
       "unchanged": 6,
       "reportDates": [
         "2026-10-02",
@@ -100,13 +89,12 @@
         "2026-09-30",
         "2026-09-29",
         "2026-09-28",
-        "2026-09-27",
-        "2026-09-26"
+        "2026-09-27"
       ],
-      "todayStatus": "published"
+      "todayStatus": "not_published"
     },
     "vla": {
-      "status": "ok",
+      "status": "not_published",
       "directorySuccess": true,
       "resources": [
         {
@@ -128,17 +116,13 @@
         {
           "url": "https://sou350121.github.io/pulsar-web/vla/2026-09-29",
           "status": "ok"
-        },
-        {
-          "url": "https://sou350121.github.io/pulsar-web/vla/2026-09-26",
-          "status": "ok"
         }
       ],
       "reports": [
         {
           "reportDate": "2026-10-02",
           "url": "https://sou350121.github.io/pulsar-web/vla/2026-10-02",
-          "status": "new",
+          "status": "unchanged",
           "count": 27,
           "revision": 1
         },
@@ -162,31 +146,23 @@
           "status": "unchanged",
           "count": 28,
           "revision": 1
-        },
-        {
-          "reportDate": "2026-09-26",
-          "url": "https://sou350121.github.io/pulsar-web/vla/2026-09-26",
-          "status": "unchanged",
-          "count": 30,
-          "revision": 1
         }
       ],
-      "raw": 144,
-      "normalized": 144,
-      "changed": 1,
+      "raw": 114,
+      "normalized": 114,
+      "changed": 0,
       "unchanged": 4,
       "reportDates": [
         "2026-10-02",
         "2026-10-01",
         "2026-09-30",
-        "2026-09-29",
-        "2026-09-26"
+        "2026-09-29"
       ],
-      "todayStatus": "published"
+      "todayStatus": "not_published"
     }
   },
   "social": {
-    "fetchedAt": "2026-10-02T07:52:01.385Z",
+    "fetchedAt": "2026-10-03T02:13:38.218Z",
     "windowHours": 168,
     "lanes": {
       "vla": {
@@ -197,9 +173,9 @@
           }
         ],
         "raw": 100,
-        "normalized": 6,
+        "normalized": 5,
         "excluded": {
-          "old": 94
+          "old": 95
         },
         "status": "ok",
         "jsonDateRange": [
@@ -227,21 +203,21 @@
       }
     }
   },
-  "changedReports": 2,
+  "changedReports": 0,
   "directorySuccesses": 2,
   "processing": {
     "configuredModel": "glm-5.1-mini",
     "returnedModel": null,
     "modelMismatch": false,
-    "input": 203,
-    "ruleDuplicates": 161,
-    "semanticDuplicates": 1,
+    "input": 163,
+    "ruleDuplicates": 162,
+    "semanticDuplicates": 0,
     "rejected": 1,
-    "retained": 40,
-    "candidates": 41,
+    "retained": 0,
+    "candidates": 0,
     "existingCandidates": 0,
-    "requests": 8,
-    "fromCache": false,
+    "requests": 0,
+    "fromCache": true,
     "state": "ok",
     "limits": {
       "new": 40,
@@ -252,7 +228,7 @@
       "retries": 1
     },
     "pending": 0,
-    "batches": 30
+    "batches": 24
   },
   "published": {
     "vla": {
