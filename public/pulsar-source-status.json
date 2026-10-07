@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-10-07T02:35:25.973Z",
+  "fetchedAt": "2026-10-07T08:05:07.657Z",
   "windowHours": 168,
   "lanes": {
     "ai": {
@@ -186,7 +186,7 @@
     }
   },
   "social": {
-    "fetchedAt": "2026-10-07T02:35:25.973Z",
+    "fetchedAt": "2026-10-07T08:05:07.657Z",
     "windowHours": 168,
     "lanes": {
       "vla": {
@@ -253,21 +253,5 @@
     },
     "pending": 0,
     "batches": 24
-  },
-  "published": {
-    "vla": {
-      "total": 363,
-      "domains": {
-        "大模型": 0,
-        "具身智能": 363
-      }
-    },
-    "ai": {
-      "total": 141,
-      "domains": {
-        "大模型": 141,
-        "具身智能": 0
-      }
-    }
   }
 }
