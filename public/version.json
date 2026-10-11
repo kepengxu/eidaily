@@ -1,11 +1,11 @@
 {
-  "version": "news-38017354465-1",
-  "buildTime": "2026-10-10T08:01:30.138Z",
-  "lastUpdate": "2026-10-10T02:36:09.949Z",
+  "version": "news-38103849625-1",
+  "buildTime": "2026-10-11T02:05:52.256Z",
+  "lastUpdate": "2026-10-11T02:05:52.256Z",
   "updateInterval": "每日北京时间07:30全量；10:00 PULSAR补更",
   "source": "unified-news-pipeline",
-  "updated": false,
-  "outcome": "unchanged",
-  "lastSourceSuccess": "2026-10-10T08:01:27.108Z",
-  "mode": "pulsar"
+  "updated": true,
+  "outcome": "updated",
+  "lastSourceSuccess": "2026-10-11T02:03:53.915Z",
+  "mode": "full"
 }

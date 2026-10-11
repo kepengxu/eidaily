@@ -1,8 +1,8 @@
 {
   "status": "ok",
   "source": "https://robodojo-benchmark.com/leaderboard",
-  "evidenceUrl": "https://robodojo-benchmark.com/assets/index-DxrXnylD.js",
-  "fetchedAt": "2026-10-10T02:36:09.087Z",
+  "evidenceUrl": "https://robodojo-benchmark.com/assets/index-BU-CDCt_.js",
+  "fetchedAt": "2026-10-11T02:05:51.187Z",
   "dateMeaning": "官网News公告日期，非监测时间或模型发布日期",
   "translation": {
     "enabled": true,
@@ -17,20 +17,20 @@
       "source": "https://robodojo-benchmark.com/leaderboard#news",
       "id": "rbn:2026-10-09:e2f3088df76e7d32ebd6ced6c7e2f777",
       "textZh": "将 MachEmbodied-U0 (17.78 / 11.51%，由 Li Auto Inc. 贡献) 添加到仿真排行榜。",
-      "translationStatus": "ok",
+      "translationStatus": "cached",
       "translationModel": "gpt-5.6-luna",
-      "translationCached": false,
+      "translationCached": true,
       "translationWarnings": []
     },
     {
       "date": "2026-10-08",
-      "text": "Add VPP2 (39.26 / 32.26%, contributed by RobotEra) and HWM-CogWAM (14.34 / 10.34%, contributed by Horizon Robotics Team) to the sim leaderboard.",
+      "text": "Add VPP2 (39.26 / 32.26%, contributed by RobotEra) and HWM-CogWAM (14.34 / 10.34%, contributed by Horizon Robotics) to the sim leaderboard.",
       "source": "https://robodojo-benchmark.com/leaderboard#news",
-      "id": "rbn:2026-10-08:65547ec8ffec04923190fa0422645d04",
-      "textZh": "将 VPP2 (39.26 / 32.26%，由 RobotEra 贡献) 和 HWM-CogWAM (14.34 / 10.34%，由 Horizon Robotics Team 贡献) 添加到仿真排行榜。",
-      "translationStatus": "cached",
+      "id": "rbn:2026-10-08:268adfe1d8bdc21a1e0669bd53c86699",
+      "textZh": "将 VPP2 (39.26 / 32.26%，由 RobotEra 贡献)和 HWM-CogWAM (14.34 / 10.34%，由 Horizon Robotics 贡献)加入仿真排行榜。",
+      "translationStatus": "ok",
       "translationModel": "gpt-5.6-luna",
-      "translationCached": true,
+      "translationCached": false,
       "translationWarnings": []
     },
     {
