@@ -2,13 +2,13 @@
   "status": "ok",
   "source": "https://robodojo-benchmark.com/leaderboard",
   "evidenceUrl": "https://robodojo-benchmark.com/assets/index-BU-CDCt_.js",
-  "fetchedAt": "2026-10-11T02:05:51.187Z",
+  "fetchedAt": "2026-10-12T02:36:03.874Z",
   "dateMeaning": "官网News公告日期，非监测时间或模型发布日期",
   "translation": {
     "enabled": true,
-    "calledLLM": true,
+    "calledLLM": false,
     "anyFailed": false,
-    "model": "gpt-5.6-luna"
+    "model": "glm-5.1-mini"
   },
   "items": [
     {
@@ -28,9 +28,9 @@
       "source": "https://robodojo-benchmark.com/leaderboard#news",
       "id": "rbn:2026-10-08:268adfe1d8bdc21a1e0669bd53c86699",
       "textZh": "将 VPP2 (39.26 / 32.26%，由 RobotEra 贡献)和 HWM-CogWAM (14.34 / 10.34%，由 Horizon Robotics 贡献)加入仿真排行榜。",
-      "translationStatus": "ok",
+      "translationStatus": "cached",
       "translationModel": "gpt-5.6-luna",
-      "translationCached": false,
+      "translationCached": true,
       "translationWarnings": []
     },
     {
