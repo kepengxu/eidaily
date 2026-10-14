@@ -1,9 +1,9 @@
 {
-  "fetchedAt": "2026-10-13T08:53:00.439Z",
+  "fetchedAt": "2026-10-14T02:04:31.686Z",
   "windowHours": 168,
   "lanes": {
     "ai": {
-      "status": "ok",
+      "status": "not_published",
       "directorySuccess": true,
       "resources": [
         {
@@ -31,10 +31,10 @@
       "reportDates": [
         "2026-10-13"
       ],
-      "todayStatus": "published"
+      "todayStatus": "not_published"
     },
     "vla": {
-      "status": "ok",
+      "status": "not_published",
       "directorySuccess": true,
       "resources": [
         {
@@ -59,10 +59,6 @@
         },
         {
           "url": "https://sou350121.github.io/pulsar-web/vla/2026-10-08",
-          "status": "ok"
-        },
-        {
-          "url": "https://sou350121.github.io/pulsar-web/vla/2026-10-07",
           "status": "ok"
         }
       ],
@@ -101,32 +97,24 @@
           "status": "unchanged",
           "count": 48,
           "revision": 1
-        },
-        {
-          "reportDate": "2026-10-07",
-          "url": "https://sou350121.github.io/pulsar-web/vla/2026-10-07",
-          "status": "unchanged",
-          "count": 49,
-          "revision": 1
         }
       ],
-      "raw": 204,
-      "normalized": 204,
+      "raw": 155,
+      "normalized": 155,
       "changed": 0,
-      "unchanged": 6,
+      "unchanged": 5,
       "reportDates": [
         "2026-10-13",
         "2026-10-12",
         "2026-10-10",
         "2026-10-09",
-        "2026-10-08",
-        "2026-10-07"
+        "2026-10-08"
       ],
-      "todayStatus": "published"
+      "todayStatus": "not_published"
     }
   },
   "social": {
-    "fetchedAt": "2026-10-13T08:53:00.439Z",
+    "fetchedAt": "2026-10-14T02:04:31.686Z",
     "windowHours": 168,
     "lanes": {
       "vla": {
@@ -173,8 +161,8 @@
     "configuredModel": "glm-5.1-mini",
     "returnedModel": null,
     "modelMismatch": false,
-    "input": 212,
-    "ruleDuplicates": 211,
+    "input": 163,
+    "ruleDuplicates": 162,
     "semanticDuplicates": 0,
     "rejected": 1,
     "retained": 0,
@@ -192,6 +180,22 @@
       "retries": 1
     },
     "pending": 0,
-    "batches": 41
+    "batches": 31
+  },
+  "published": {
+    "vla": {
+      "total": 542,
+      "domains": {
+        "大模型": 2,
+        "具身智能": 540
+      }
+    },
+    "ai": {
+      "total": 149,
+      "domains": {
+        "大模型": 149,
+        "具身智能": 0
+      }
+    }
   }
 }

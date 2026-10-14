@@ -1,14 +1,14 @@
 {
   "status": "ok",
   "source": "https://robodojo-benchmark.com/leaderboard",
-  "evidenceUrl": "https://robodojo-benchmark.com/assets/index-BU-CDCt_.js",
-  "fetchedAt": "2026-10-13T03:59:00.007Z",
+  "evidenceUrl": "https://robodojo-benchmark.com/assets/index-BqjAzlO5.js",
+  "fetchedAt": "2026-10-14T02:06:50.763Z",
   "dateMeaning": "官网News公告日期，非监测时间或模型发布日期",
   "translation": {
     "enabled": true,
-    "calledLLM": false,
+    "calledLLM": true,
     "anyFailed": false,
-    "model": "glm-5.1-mini"
+    "model": "gpt-5.6-luna"
   },
   "items": [
     {
@@ -57,13 +57,13 @@
     },
     {
       "date": "2026-09-28",
-      "text": "Add InternW0-Δ (30.77 / 23.91%, contributed by Shanghai AI Lab), PhysicalRSI (36.27 / 31.38%, contributed by HKU MMLab & KAI), and VPP2-Preview (31.40 / 25.62%, contributed by RobotEra) to the sim leaderboard.",
+      "text": "Add InternW0-Δ (30.77 / 23.91%, contributed by Shanghai AI Lab), PhysicalRSI (36.27 / 31.38%, contributed by HKU MMLab & KAI) as baseline solution (Agent), and VPP2-Preview (31.40 / 25.62%, contributed by RobotEra) to the sim leaderboard.",
       "source": "https://robodojo-benchmark.com/leaderboard#news",
-      "id": "rbn:2026-09-28:cb3bbb5f156b449531866dda034db29b",
-      "textZh": "将 InternW0-Δ（30.77 / 23.91%，由 Shanghai AI Lab 贡献）、PhysicalRSI（36.27 / 31.38%，由 HKU MMLab & KAI 贡献）和 VPP2-Preview（31.40 / 25.62%，由 RobotEra 贡献）添加到仿真排行榜。",
-      "translationStatus": "cached",
+      "id": "rbn:2026-09-28:7bdfc5442ca8146d43ef0306443eaca1",
+      "textZh": "将 InternW0-Δ (30.77 / 23.91%，由 Shanghai AI Lab 贡献)、PhysicalRSI (36.27 / 31.38%，由 HKU MMLab & KAI 贡献) 作为基线解决方案 (Agent)，以及 VPP2-Preview (31.40 / 25.62%，由 RobotEra 贡献) 添加到仿真排行榜。",
+      "translationStatus": "ok",
       "translationModel": "gpt-5.6-luna",
-      "translationCached": true,
+      "translationCached": false,
       "translationWarnings": []
     },
     {
