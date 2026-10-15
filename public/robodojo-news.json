@@ -1,16 +1,29 @@
 {
   "status": "ok",
   "source": "https://robodojo-benchmark.com/leaderboard",
-  "evidenceUrl": "https://robodojo-benchmark.com/assets/index-BqjAzlO5.js",
-  "fetchedAt": "2026-10-14T02:06:50.763Z",
+  "evidenceUrl": "https://robodojo-benchmark.com/assets/index-B-7vSe0k.js",
+  "fetchedAt": "2026-10-15T01:40:10.023Z",
   "dateMeaning": "官网News公告日期，非监测时间或模型发布日期",
   "translation": {
     "enabled": true,
     "calledLLM": true,
-    "anyFailed": false,
-    "model": "gpt-5.6-luna"
+    "anyFailed": true,
+    "model": "glm-5.1-mini"
   },
   "items": [
+    {
+      "date": "2026-10-14",
+      "text": "Add EmbodiedEvo (45.08 / 38.95%, contributed by Einsia.AI) to the sim leaderboard (agent track).",
+      "source": "https://robodojo-benchmark.com/leaderboard#news",
+      "id": "rbn:2026-10-14:6ed519be6424b66c6111fa4e31f8d794",
+      "textZh": null,
+      "translationStatus": "failed",
+      "translationModel": "glm-5.1-mini",
+      "translationCached": false,
+      "translationWarnings": [
+        "翻译失败：LLM HTTP 503: {\"error\":{\"code\":\"model_not_found\",\"message\":\"No available channel for model glm-5.1-mini under group vip (distributor) (request id: 202610150140098993493268268d9d6zbJ44pEF)\",\"type\":\"new_api_error\"}}"
+      ]
+    },
     {
       "date": "2026-10-09",
       "text": "Add MachEmbodied-U0 (17.78 / 11.51%, contributed by Li Auto Inc.) to the sim leaderboard.",
@@ -61,9 +74,9 @@
       "source": "https://robodojo-benchmark.com/leaderboard#news",
       "id": "rbn:2026-09-28:7bdfc5442ca8146d43ef0306443eaca1",
       "textZh": "将 InternW0-Δ (30.77 / 23.91%，由 Shanghai AI Lab 贡献)、PhysicalRSI (36.27 / 31.38%，由 HKU MMLab & KAI 贡献) 作为基线解决方案 (Agent)，以及 VPP2-Preview (31.40 / 25.62%，由 RobotEra 贡献) 添加到仿真排行榜。",
-      "translationStatus": "ok",
+      "translationStatus": "cached",
       "translationModel": "gpt-5.6-luna",
-      "translationCached": false,
+      "translationCached": true,
       "translationWarnings": []
     },
     {
