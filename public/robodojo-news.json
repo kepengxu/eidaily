@@ -2,7 +2,7 @@
   "status": "ok",
   "source": "https://robodojo-benchmark.com/leaderboard",
   "evidenceUrl": "https://robodojo-benchmark.com/assets/index-B-7vSe0k.js",
-  "fetchedAt": "2026-10-16T01:35:39.537Z",
+  "fetchedAt": "2026-10-17T01:25:54.679Z",
   "dateMeaning": "官网News公告日期，非监测时间或模型发布日期",
   "translation": {
     "enabled": true,
@@ -21,7 +21,7 @@
       "translationModel": "glm-5.1-mini",
       "translationCached": false,
       "translationWarnings": [
-        "翻译失败：LLM HTTP 503: {\"error\":{\"code\":\"model_not_found\",\"message\":\"No available channel for model glm-5.1-mini under group vip (distributor) (request id: 202610160135393867302918268d9d6W4EUxIUI)\",\"type\":\"new_api_error\"}}"
+        "翻译失败：LLM HTTP 503: {\"error\":{\"code\":\"model_not_found\",\"message\":\"No available channel for model glm-5.1-mini under group vip (distributor) (request id: 202610170125545411205648268d9d6UdsXtHyR)\",\"type\":\"new_api_error\"}}"
       ]
     },
     {
