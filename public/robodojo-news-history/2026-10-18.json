@@ -1,0 +1,239 @@
+{
+  "status": "ok",
+  "source": "https://robodojo-benchmark.com/leaderboard",
+  "evidenceUrl": "https://robodojo-benchmark.com/assets/index-BFL4c4RM.js",
+  "fetchedAt": "2026-10-18T01:24:02.700Z",
+  "dateMeaning": "官网News公告日期，非监测时间或模型发布日期",
+  "translation": {
+    "enabled": true,
+    "calledLLM": true,
+    "anyFailed": true,
+    "model": "glm-5.1-mini"
+  },
+  "items": [
+    {
+      "date": "2026-10-17",
+      "text": "Add WorldScape-R²SI (46.58 / 39.35%, contributed by Manifold AI) to the sim leaderboard (agent track).",
+      "source": "https://robodojo-benchmark.com/leaderboard#news",
+      "id": "rbn:2026-10-17:1a7e1f0470fd8b548133ae15ea2dae39",
+      "textZh": null,
+      "translationStatus": "failed",
+      "translationModel": "glm-5.1-mini",
+      "translationCached": false,
+      "translationWarnings": [
+        "翻译失败：LLM HTTP 503: {\"error\":{\"code\":\"model_not_found\",\"message\":\"No available channel for model glm-5.1-mini under group vip (distributor) (request id: 202610180124025485627768268d9d6w7CVn8lB)\",\"type\":\"new_api_error\"}}"
+      ]
+    },
+    {
+      "date": "2026-10-14",
+      "text": "Add EmbodiedEvo (45.08 / 38.95%, contributed by Einsia.AI) to the sim leaderboard (agent track).",
+      "source": "https://robodojo-benchmark.com/leaderboard#news",
+      "id": "rbn:2026-10-14:6ed519be6424b66c6111fa4e31f8d794",
+      "textZh": null,
+      "translationStatus": "failed",
+      "translationModel": "glm-5.1-mini",
+      "translationCached": false,
+      "translationWarnings": [
+        "翻译失败：LLM HTTP 503: {\"error\":{\"code\":\"model_not_found\",\"message\":\"No available channel for model glm-5.1-mini under group vip (distributor) (request id: 202610180124025485627768268d9d6w7CVn8lB)\",\"type\":\"new_api_error\"}}"
+      ]
+    },
+    {
+      "date": "2026-10-09",
+      "text": "Add MachEmbodied-U0 (17.78 / 11.51%, contributed by Li Auto Inc.) to the sim leaderboard.",
+      "source": "https://robodojo-benchmark.com/leaderboard#news",
+      "id": "rbn:2026-10-09:e2f3088df76e7d32ebd6ced6c7e2f777",
+      "textZh": "将 MachEmbodied-U0 (17.78 / 11.51%，由 Li Auto Inc. 贡献) 添加到仿真排行榜。",
+      "translationStatus": "cached",
+      "translationModel": "gpt-5.6-luna",
+      "translationCached": true,
+      "translationWarnings": []
+    },
+    {
+      "date": "2026-10-08",
+      "text": "Add VPP2 (39.26 / 32.26%, contributed by RobotEra) and HWM-CogWAM (14.34 / 10.34%, contributed by Horizon Robotics) to the sim leaderboard.",
+      "source": "https://robodojo-benchmark.com/leaderboard#news",
+      "id": "rbn:2026-10-08:268adfe1d8bdc21a1e0669bd53c86699",
+      "textZh": "将 VPP2 (39.26 / 32.26%，由 RobotEra 贡献)和 HWM-CogWAM (14.34 / 10.34%，由 Horizon Robotics 贡献)加入仿真排行榜。",
+      "translationStatus": "cached",
+      "translationModel": "gpt-5.6-luna",
+      "translationCached": true,
+      "translationWarnings": []
+    },
+    {
+      "date": "2026-10-03",
+      "text": "Add Rex-M1 Preview (33.79 / 27.44%, contributed by FT Lab & VisIncept) to the sim leaderboard.",
+      "source": "https://robodojo-benchmark.com/leaderboard#news",
+      "id": "rbn:2026-10-03:633b2434224a37814cd90b4b0699a4fb",
+      "textZh": "将 Rex-M1 Preview（33.79 / 27.44%，由 FT Lab & VisIncept 贡献）加入仿真排行榜。",
+      "translationStatus": "cached",
+      "translationModel": "gpt-5.6-luna",
+      "translationCached": true,
+      "translationWarnings": []
+    },
+    {
+      "date": "2026-10-02",
+      "text": "Add Awomo-0.5 (35.34 / 29.64%, contributed by Awomo) and ME-Brain-1.0 (21.67 / 15.99%, contributed by Li Auto Inc.) to the sim leaderboard.",
+      "source": "https://robodojo-benchmark.com/leaderboard#news",
+      "id": "rbn:2026-10-02:c453b22324dfd79f8bbf2356203acc81",
+      "textZh": "将 Awomo-0.5（35.34 / 29.64%，由 Awomo 贡献）和 ME-Brain-1.0（21.67 / 15.99%，由 Li Auto Inc. 贡献）添加到仿真排行榜。",
+      "translationStatus": "cached",
+      "translationModel": "gpt-5.6-luna",
+      "translationCached": true,
+      "translationWarnings": []
+    },
+    {
+      "date": "2026-09-28",
+      "text": "Add InternW0-Δ (30.77 / 23.91%, contributed by Shanghai AI Lab), PhysicalRSI (36.27 / 31.38%, contributed by HKU MMLab & KAI) as baseline solution (Agent), and VPP2-Preview (31.40 / 25.62%, contributed by RobotEra) to the sim leaderboard.",
+      "source": "https://robodojo-benchmark.com/leaderboard#news",
+      "id": "rbn:2026-09-28:7bdfc5442ca8146d43ef0306443eaca1",
+      "textZh": "将 InternW0-Δ (30.77 / 23.91%，由 Shanghai AI Lab 贡献)、PhysicalRSI (36.27 / 31.38%，由 HKU MMLab & KAI 贡献) 作为基线解决方案 (Agent)，以及 VPP2-Preview (31.40 / 25.62%，由 RobotEra 贡献) 添加到仿真排行榜。",
+      "translationStatus": "cached",
+      "translationModel": "gpt-5.6-luna",
+      "translationCached": true,
+      "translationWarnings": []
+    },
+    {
+      "date": "2026-09-23",
+      "text": "Add Simate-beta to the sim leaderboard (33.95 / 27.96%, contributed by Simate).",
+      "source": "https://robodojo-benchmark.com/leaderboard#news",
+      "id": "rbn:2026-09-23:60df10feba0eb956bce97d1f3646eb2a",
+      "textZh": "将 Simate-beta 添加到仿真排行榜（33.95 / 27.96%，由 Simate 贡献）。",
+      "translationStatus": "cached",
+      "translationModel": "gpt-5.6-luna",
+      "translationCached": true,
+      "translationWarnings": []
+    },
+    {
+      "date": "2026-09-21",
+      "text": "Add SimpleMemVLA to the sim leaderboard (12.58 / 9.27%, contributed by SimpleMemVLA Team).",
+      "source": "https://robodojo-benchmark.com/leaderboard#news",
+      "id": "rbn:2026-09-21:495b77e9183514b69fac2352a57bfd18",
+      "textZh": "将 SimpleMemVLA 加入仿真排行榜（12.58 / 9.27%，由 SimpleMemVLA Team 贡献）。",
+      "translationStatus": "cached",
+      "translationModel": "gpt-5.6-luna",
+      "translationCached": true,
+      "translationWarnings": []
+    },
+    {
+      "date": "2026-09-20",
+      "text": "Add KinRT to the sim leaderboard (13.02 / 8.80%, contributed by IIGroup).",
+      "source": "https://robodojo-benchmark.com/leaderboard#news",
+      "id": "rbn:2026-09-20:9b11e063061dbf324d409d4cff1b2b41",
+      "textZh": "将 KinRT 加入仿真排行榜（13.02 / 8.80%，由 IIGroup 贡献）。",
+      "translationStatus": "cached",
+      "translationModel": "gpt-5.6-luna",
+      "translationCached": true,
+      "translationWarnings": []
+    },
+    {
+      "date": "2026-09-17",
+      "text": "Add Liber-0 Preview (30.74 / 25.52%) and Liber-0 Lite (29.24 / 24.23%) to the sim leaderboard, contributed by LiberAI.",
+      "source": "https://robodojo-benchmark.com/leaderboard#news",
+      "id": "rbn:2026-09-17:656f36777ae71a98b1e14d6c6d505637",
+      "textZh": "将 Liber-0 Preview（30.74 / 25.52%）和 Liber-0 Lite（29.24 / 24.23%）加入仿真排行榜，由 LiberAI 贡献。",
+      "translationStatus": "cached",
+      "translationModel": "gpt-5.6-luna",
+      "translationCached": true,
+      "translationWarnings": []
+    },
+    {
+      "date": "2026-09-16",
+      "text": "Add GPT-6-Astra (28.97 / 22.48%), DeepSeek-Flash (2.99 / 1.92%, 10 episodes / task), and GPT-5.5 (1.13 / 0.88%) to the sim leaderboard, contributed by RoboDojo Team.",
+      "source": "https://robodojo-benchmark.com/leaderboard#news",
+      "id": "rbn:2026-09-16:ccbb4299419f8600ea09e8e4bf90b3dd",
+      "textZh": "将 GPT-6-Astra（28.97 / 22.48%）、DeepSeek-Flash（2.99 / 1.92%，10 episodes / task）和 GPT-5.5（1.13 / 0.88%）加入仿真排行榜，由 RoboDojo Team 贡献。",
+      "translationStatus": "cached",
+      "translationModel": "gpt-5.6-luna",
+      "translationCached": true,
+      "translationWarnings": []
+    },
+    {
+      "date": "2026-09-09",
+      "text": "Add StarVLA-PI_v3 (10.81 / 7.51%), StarVLA-GR00T (8.25 / 4.67%), and StarVLA-OFT (8.18 / 4.82%) to the sim leaderboard, contributed by StarVLA Team.",
+      "source": "https://robodojo-benchmark.com/leaderboard#news",
+      "id": "rbn:2026-09-09:1e868985b354373d576a96b784cdf45e",
+      "textZh": "将 StarVLA-PI_v3（10.81 / 7.51%）、StarVLA-GR00T（8.25 / 4.67%）和 StarVLA-OFT（8.18 / 4.82%）加入仿真排行榜，由 StarVLA Team 贡献。",
+      "translationStatus": "cached",
+      "translationModel": "gpt-5.6-luna",
+      "translationCached": true,
+      "translationWarnings": []
+    },
+    {
+      "date": "2026-09-05",
+      "text": "Add OpenWAM-α to the sim leaderboard (17.18 / 11.92%) and the real-world leaderboard (37.6 / 24.4%, contributed by OpenWAM Team).",
+      "source": "https://robodojo-benchmark.com/leaderboard#news",
+      "id": "rbn:2026-09-05:8a43457fe9476ccab66f57bafcb977cc",
+      "textZh": "将 OpenWAM-α 加入仿真排行榜（17.18 / 11.92%）和真实世界排行榜（37.6 / 24.4%，由 OpenWAM Team 贡献）。",
+      "translationStatus": "cached",
+      "translationModel": "gpt-5.6-luna",
+      "translationCached": true,
+      "translationWarnings": []
+    },
+    {
+      "date": "2026-09-02",
+      "text": "Update full sim evaluation scores for MolmoAct2 (8.99 / 5.03%, contributed by MolmoAct2 Team).",
+      "source": "https://robodojo-benchmark.com/leaderboard#news",
+      "id": "rbn:2026-09-02:e25be2b0caa8c2575250731810c617f9",
+      "textZh": "更新 MolmoAct2 的完整仿真评估分数（8.99 / 5.03%，由 MolmoAct2 Team 贡献）。",
+      "translationStatus": "cached",
+      "translationModel": "gpt-5.6-luna",
+      "translationCached": true,
+      "translationWarnings": []
+    },
+    {
+      "date": "2026-08-31",
+      "text": "Add Meituan-Robotics-0 to the sim leaderboard (14.95 / 9.53%, contributed by Meituan Robotics).",
+      "source": "https://robodojo-benchmark.com/leaderboard#news",
+      "id": "rbn:2026-08-31:9494e8470f3970448f564759d2089864",
+      "textZh": "将 Meituan-Robotics-0 加入仿真排行榜（14.95 / 9.53%，由 Meituan Robotics 贡献）。",
+      "translationStatus": "cached",
+      "translationModel": "gpt-5.6-luna",
+      "translationCached": true,
+      "translationWarnings": []
+    },
+    {
+      "date": "2026-08-24",
+      "text": "Add DM0.5 to the sim leaderboard (24.90 / 19.34%, contributed by Dexmal).",
+      "source": "https://robodojo-benchmark.com/leaderboard#news",
+      "id": "rbn:2026-08-24:7dd62bd66394102da3a04c11b2596495",
+      "textZh": "将 DM0.5 加入仿真排行榜（24.90 / 19.34%，由 Dexmal 贡献）。",
+      "translationStatus": "cached",
+      "translationModel": "gpt-5.6-luna",
+      "translationCached": true,
+      "translationWarnings": []
+    },
+    {
+      "date": "2026-08-04",
+      "text": "Add GalaxeaVLA (G0.5) to the sim leaderboard (20.23 / 14.88%, contributed by Galaxea AI).",
+      "source": "https://robodojo-benchmark.com/leaderboard#news",
+      "id": "rbn:2026-08-04:4877878ef75ab779443fcb92e81c9b6c",
+      "textZh": "将 GalaxeaVLA (G0.5) 加入仿真排行榜（20.23 / 14.88%，由 Galaxea AI 贡献）。",
+      "translationStatus": "cached",
+      "translationModel": "gpt-5.6-luna",
+      "translationCached": true,
+      "translationWarnings": []
+    },
+    {
+      "date": "2026-07-31",
+      "text": "Add VLAct to the sim leaderboard (10.66 / 7.60%, contributed by StarVLA Team).",
+      "source": "https://robodojo-benchmark.com/leaderboard#news",
+      "id": "rbn:2026-07-31:026030fb9544a331a89882bfddae395c",
+      "textZh": "将 VLAct 加入仿真排行榜（10.66 / 7.60%，由 StarVLA Team 贡献）。",
+      "translationStatus": "cached",
+      "translationModel": "gpt-5.6-luna",
+      "translationCached": true,
+      "translationWarnings": []
+    },
+    {
+      "date": "2026-07-13",
+      "text": "Add Xiaomi-Robotics-1 to the sim leaderboard (20.07 / 13.93%, contributed by Xiaomi Robotics).",
+      "source": "https://robodojo-benchmark.com/leaderboard#news",
+      "id": "rbn:2026-07-13:5beeb455321adac23f75ce7c92192bd9",
+      "textZh": "将 Xiaomi-Robotics-1 加入仿真排行榜（20.07 / 13.93%，由 Xiaomi Robotics 贡献）。",
+      "translationStatus": "cached",
+      "translationModel": "gpt-5.6-luna",
+      "translationCached": true,
+      "translationWarnings": []
+    }
+  ]
+}
