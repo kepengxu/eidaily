@@ -2,7 +2,7 @@
   "status": "ok",
   "source": "https://robodojo-benchmark.com/leaderboard",
   "evidenceUrl": "https://robodojo-benchmark.com/assets/index-BFL4c4RM.js",
-  "fetchedAt": "2026-10-18T01:24:02.700Z",
+  "fetchedAt": "2026-10-19T01:32:06.733Z",
   "dateMeaning": "官网News公告日期，非监测时间或模型发布日期",
   "translation": {
     "enabled": true,
@@ -21,7 +21,7 @@
       "translationModel": "glm-5.1-mini",
       "translationCached": false,
       "translationWarnings": [
-        "翻译失败：LLM HTTP 503: {\"error\":{\"code\":\"model_not_found\",\"message\":\"No available channel for model glm-5.1-mini under group vip (distributor) (request id: 202610180124025485627768268d9d6w7CVn8lB)\",\"type\":\"new_api_error\"}}"
+        "翻译失败：LLM HTTP 503: {\"error\":{\"code\":\"model_not_found\",\"message\":\"No available channel for model glm-5.1-mini under group vip (distributor) (request id: 202610190132065941248178268d9d6tr1H9feh)\",\"type\":\"new_api_error\"}}"
       ]
     },
     {
@@ -34,7 +34,7 @@
       "translationModel": "glm-5.1-mini",
       "translationCached": false,
       "translationWarnings": [
-        "翻译失败：LLM HTTP 503: {\"error\":{\"code\":\"model_not_found\",\"message\":\"No available channel for model glm-5.1-mini under group vip (distributor) (request id: 202610180124025485627768268d9d6w7CVn8lB)\",\"type\":\"new_api_error\"}}"
+        "翻译失败：LLM HTTP 503: {\"error\":{\"code\":\"model_not_found\",\"message\":\"No available channel for model glm-5.1-mini under group vip (distributor) (request id: 202610190132065941248178268d9d6tr1H9feh)\",\"type\":\"new_api_error\"}}"
       ]
     },
     {
