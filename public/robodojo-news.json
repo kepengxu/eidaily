@@ -1,8 +1,8 @@
 {
   "status": "ok",
   "source": "https://robodojo-benchmark.com/leaderboard",
-  "evidenceUrl": "https://robodojo-benchmark.com/assets/index-BFL4c4RM.js",
-  "fetchedAt": "2026-10-19T01:32:06.733Z",
+  "evidenceUrl": "https://robodojo-benchmark.com/assets/index-CrFajAqx.js",
+  "fetchedAt": "2026-10-22T01:42:59.686Z",
   "dateMeaning": "官网News公告日期，非监测时间或模型发布日期",
   "translation": {
     "enabled": true,
@@ -11,6 +11,32 @@
     "model": "glm-5.1-mini"
   },
   "items": [
+    {
+      "date": "2026-10-21",
+      "text": "Add InternW0-Δ (38.9 / 31.7%, contributed by Shanghai AI Lab) to the real-world leaderboard.",
+      "source": "https://robodojo-benchmark.com/leaderboard#news",
+      "id": "rbn:2026-10-21:dae9b9171ef00777c41a262ebade3b06",
+      "textZh": null,
+      "translationStatus": "failed",
+      "translationModel": "glm-5.1-mini",
+      "translationCached": false,
+      "translationWarnings": [
+        "翻译失败：LLM HTTP 503: {\"error\":{\"code\":\"model_not_found\",\"message\":\"No available channel for model glm-5.1-mini under group vip (distributor) (request id: 202610220142595517529438268d9d6vDQJWi37)\",\"type\":\"new_api_error\"}}"
+      ]
+    },
+    {
+      "date": "2026-10-20",
+      "text": "Add HexaShell-Preview (53.18 / 46.85%, contributed by HexaFuture) to the sim leaderboard (agent track).",
+      "source": "https://robodojo-benchmark.com/leaderboard#news",
+      "id": "rbn:2026-10-20:bfb6198de693aa68bfc665f4ec1b7018",
+      "textZh": null,
+      "translationStatus": "failed",
+      "translationModel": "glm-5.1-mini",
+      "translationCached": false,
+      "translationWarnings": [
+        "翻译失败：LLM HTTP 503: {\"error\":{\"code\":\"model_not_found\",\"message\":\"No available channel for model glm-5.1-mini under group vip (distributor) (request id: 202610220142595517529438268d9d6vDQJWi37)\",\"type\":\"new_api_error\"}}"
+      ]
+    },
     {
       "date": "2026-10-17",
       "text": "Add WorldScape-R²SI (46.58 / 39.35%, contributed by Manifold AI) to the sim leaderboard (agent track).",
@@ -21,7 +47,7 @@
       "translationModel": "glm-5.1-mini",
       "translationCached": false,
       "translationWarnings": [
-        "翻译失败：LLM HTTP 503: {\"error\":{\"code\":\"model_not_found\",\"message\":\"No available channel for model glm-5.1-mini under group vip (distributor) (request id: 202610190132065941248178268d9d6tr1H9feh)\",\"type\":\"new_api_error\"}}"
+        "翻译失败：LLM HTTP 503: {\"error\":{\"code\":\"model_not_found\",\"message\":\"No available channel for model glm-5.1-mini under group vip (distributor) (request id: 202610220142595517529438268d9d6vDQJWi37)\",\"type\":\"new_api_error\"}}"
       ]
     },
     {
@@ -34,7 +60,7 @@
       "translationModel": "glm-5.1-mini",
       "translationCached": false,
       "translationWarnings": [
-        "翻译失败：LLM HTTP 503: {\"error\":{\"code\":\"model_not_found\",\"message\":\"No available channel for model glm-5.1-mini under group vip (distributor) (request id: 202610190132065941248178268d9d6tr1H9feh)\",\"type\":\"new_api_error\"}}"
+        "翻译失败：LLM HTTP 503: {\"error\":{\"code\":\"model_not_found\",\"message\":\"No available channel for model glm-5.1-mini under group vip (distributor) (request id: 202610220142595517529438268d9d6vDQJWi37)\",\"type\":\"new_api_error\"}}"
       ]
     },
     {
@@ -208,28 +234,6 @@
       "source": "https://robodojo-benchmark.com/leaderboard#news",
       "id": "rbn:2026-08-04:4877878ef75ab779443fcb92e81c9b6c",
       "textZh": "将 GalaxeaVLA (G0.5) 加入仿真排行榜（20.23 / 14.88%，由 Galaxea AI 贡献）。",
-      "translationStatus": "cached",
-      "translationModel": "gpt-5.6-luna",
-      "translationCached": true,
-      "translationWarnings": []
-    },
-    {
-      "date": "2026-07-31",
-      "text": "Add VLAct to the sim leaderboard (10.66 / 7.60%, contributed by StarVLA Team).",
-      "source": "https://robodojo-benchmark.com/leaderboard#news",
-      "id": "rbn:2026-07-31:026030fb9544a331a89882bfddae395c",
-      "textZh": "将 VLAct 加入仿真排行榜（10.66 / 7.60%，由 StarVLA Team 贡献）。",
-      "translationStatus": "cached",
-      "translationModel": "gpt-5.6-luna",
-      "translationCached": true,
-      "translationWarnings": []
-    },
-    {
-      "date": "2026-07-13",
-      "text": "Add Xiaomi-Robotics-1 to the sim leaderboard (20.07 / 13.93%, contributed by Xiaomi Robotics).",
-      "source": "https://robodojo-benchmark.com/leaderboard#news",
-      "id": "rbn:2026-07-13:5beeb455321adac23f75ce7c92192bd9",
-      "textZh": "将 Xiaomi-Robotics-1 加入仿真排行榜（20.07 / 13.93%，由 Xiaomi Robotics 贡献）。",
       "translationStatus": "cached",
       "translationModel": "gpt-5.6-luna",
       "translationCached": true,
