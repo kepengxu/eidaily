@@ -1,8 +1,8 @@
 {
   "status": "ok",
   "source": "https://robodojo-benchmark.com/leaderboard",
-  "evidenceUrl": "https://robodojo-benchmark.com/assets/index-CrFajAqx.js",
-  "fetchedAt": "2026-10-24T01:48:26.349Z",
+  "evidenceUrl": "https://robodojo-benchmark.com/assets/index-DA5jHulR.js",
+  "fetchedAt": "2026-10-25T01:25:09.867Z",
   "dateMeaning": "官网News公告日期，非监测时间或模型发布日期",
   "translation": {
     "enabled": true,
@@ -11,6 +11,19 @@
     "model": "glm-5.1-mini"
   },
   "items": [
+    {
+      "date": "2026-10-24",
+      "text": "Add PyRUA-Lean (55.26 / 50.35%, contributed by PKU DAGroup) to the sim leaderboard (agent track). Add EWAM (15.20 / 9.37%, contributed by EWAM Team) to the sim leaderboard.",
+      "source": "https://robodojo-benchmark.com/leaderboard#news",
+      "id": "rbn:2026-10-24:a9350c3ad70df48af1f32992875af1c4",
+      "textZh": null,
+      "translationStatus": "failed",
+      "translationModel": "glm-5.1-mini",
+      "translationCached": false,
+      "translationWarnings": [
+        "翻译失败：LLM HTTP 503: {\"error\":{\"code\":\"model_not_found\",\"message\":\"No available channel for model glm-5.1-mini under group vip (distributor) (request id: 202610250125097168012658268d9d6j4Kmu05Z)\",\"type\":\"new_api_error\"}}"
+      ]
+    },
     {
       "date": "2026-10-21",
       "text": "Add InternW0-Δ (38.9 / 31.7%, contributed by Shanghai AI Lab) to the real-world leaderboard.",
@@ -21,7 +34,7 @@
       "translationModel": "glm-5.1-mini",
       "translationCached": false,
       "translationWarnings": [
-        "翻译失败：LLM HTTP 503: {\"error\":{\"code\":\"model_not_found\",\"message\":\"No available channel for model glm-5.1-mini under group vip (distributor) (request id: 202610240148262244950118268d9d6hB99O8q5)\",\"type\":\"new_api_error\"}}"
+        "翻译失败：LLM HTTP 503: {\"error\":{\"code\":\"model_not_found\",\"message\":\"No available channel for model glm-5.1-mini under group vip (distributor) (request id: 202610250125097168012658268d9d6j4Kmu05Z)\",\"type\":\"new_api_error\"}}"
       ]
     },
     {
@@ -34,7 +47,7 @@
       "translationModel": "glm-5.1-mini",
       "translationCached": false,
       "translationWarnings": [
-        "翻译失败：LLM HTTP 503: {\"error\":{\"code\":\"model_not_found\",\"message\":\"No available channel for model glm-5.1-mini under group vip (distributor) (request id: 202610240148262244950118268d9d6hB99O8q5)\",\"type\":\"new_api_error\"}}"
+        "翻译失败：LLM HTTP 503: {\"error\":{\"code\":\"model_not_found\",\"message\":\"No available channel for model glm-5.1-mini under group vip (distributor) (request id: 202610250125097168012658268d9d6j4Kmu05Z)\",\"type\":\"new_api_error\"}}"
       ]
     },
     {
@@ -47,7 +60,7 @@
       "translationModel": "glm-5.1-mini",
       "translationCached": false,
       "translationWarnings": [
-        "翻译失败：LLM HTTP 503: {\"error\":{\"code\":\"model_not_found\",\"message\":\"No available channel for model glm-5.1-mini under group vip (distributor) (request id: 202610240148262244950118268d9d6hB99O8q5)\",\"type\":\"new_api_error\"}}"
+        "翻译失败：LLM HTTP 503: {\"error\":{\"code\":\"model_not_found\",\"message\":\"No available channel for model glm-5.1-mini under group vip (distributor) (request id: 202610250125097168012658268d9d6j4Kmu05Z)\",\"type\":\"new_api_error\"}}"
       ]
     },
     {
@@ -60,7 +73,7 @@
       "translationModel": "glm-5.1-mini",
       "translationCached": false,
       "translationWarnings": [
-        "翻译失败：LLM HTTP 503: {\"error\":{\"code\":\"model_not_found\",\"message\":\"No available channel for model glm-5.1-mini under group vip (distributor) (request id: 202610240148262244950118268d9d6hB99O8q5)\",\"type\":\"new_api_error\"}}"
+        "翻译失败：LLM HTTP 503: {\"error\":{\"code\":\"model_not_found\",\"message\":\"No available channel for model glm-5.1-mini under group vip (distributor) (request id: 202610250125097168012658268d9d6j4Kmu05Z)\",\"type\":\"new_api_error\"}}"
       ]
     },
     {
@@ -223,17 +236,6 @@
       "source": "https://robodojo-benchmark.com/leaderboard#news",
       "id": "rbn:2026-08-24:7dd62bd66394102da3a04c11b2596495",
       "textZh": "将 DM0.5 加入仿真排行榜（24.90 / 19.34%，由 Dexmal 贡献）。",
-      "translationStatus": "cached",
-      "translationModel": "gpt-5.6-luna",
-      "translationCached": true,
-      "translationWarnings": []
-    },
-    {
-      "date": "2026-08-04",
-      "text": "Add GalaxeaVLA (G0.5) to the sim leaderboard (20.23 / 14.88%, contributed by Galaxea AI).",
-      "source": "https://robodojo-benchmark.com/leaderboard#news",
-      "id": "rbn:2026-08-04:4877878ef75ab779443fcb92e81c9b6c",
-      "textZh": "将 GalaxeaVLA (G0.5) 加入仿真排行榜（20.23 / 14.88%，由 Galaxea AI 贡献）。",
       "translationStatus": "cached",
       "translationModel": "gpt-5.6-luna",
       "translationCached": true,
