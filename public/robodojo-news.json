@@ -1,8 +1,8 @@
 {
   "status": "ok",
   "source": "https://robodojo-benchmark.com/leaderboard",
-  "evidenceUrl": "https://robodojo-benchmark.com/assets/index-CjJl8yvH.js",
-  "fetchedAt": "2026-10-28T02:30:54.454Z",
+  "evidenceUrl": "https://robodojo-benchmark.com/assets/index-Ds7ePAw3.js",
+  "fetchedAt": "2026-10-29T02:38:14.897Z",
   "dateMeaning": "官网News公告日期，非监测时间或模型发布日期",
   "translation": {
     "enabled": true,
@@ -11,6 +11,19 @@
     "model": "glm-5.1-mini"
   },
   "items": [
+    {
+      "date": "2026-10-28",
+      "text": "Add WALL-OSS-1.0-lite (42.59 / 34.97%, contributed by X Square Robot) to the sim leaderboard.",
+      "source": "https://robodojo-benchmark.com/leaderboard#news",
+      "id": "rbn:2026-10-28:86f86a91db5e349a609636ef2a7b4e90",
+      "textZh": null,
+      "translationStatus": "failed",
+      "translationModel": "glm-5.1-mini",
+      "translationCached": false,
+      "translationWarnings": [
+        "翻译失败：LLM HTTP 503: {\"error\":{\"code\":\"model_not_found\",\"message\":\"No available channel for model glm-5.1-mini under group vip (distributor) (request id: 202610290238148325210288268d9d6ltTxJXkB)\",\"type\":\"new_api_error\"}}"
+      ]
+    },
     {
       "date": "2026-10-27",
       "text": "Add GO-3 Nano Preview (61.90 / 56.42%, contributed by AGIBOT) to the sim leaderboard (agent track).",
@@ -21,7 +34,7 @@
       "translationModel": "glm-5.1-mini",
       "translationCached": false,
       "translationWarnings": [
-        "翻译失败：LLM HTTP 503: {\"error\":{\"code\":\"model_not_found\",\"message\":\"No available channel for model glm-5.1-mini under group vip (distributor) (request id: 202610280230543131436668268d9d6K4M5ZGc7)\",\"type\":\"new_api_error\"}}"
+        "翻译失败：LLM HTTP 503: {\"error\":{\"code\":\"model_not_found\",\"message\":\"No available channel for model glm-5.1-mini under group vip (distributor) (request id: 202610290238148325210288268d9d6ltTxJXkB)\",\"type\":\"new_api_error\"}}"
       ]
     },
     {
@@ -34,7 +47,7 @@
       "translationModel": "glm-5.1-mini",
       "translationCached": false,
       "translationWarnings": [
-        "翻译失败：LLM HTTP 503: {\"error\":{\"code\":\"model_not_found\",\"message\":\"No available channel for model glm-5.1-mini under group vip (distributor) (request id: 202610280230543131436668268d9d6K4M5ZGc7)\",\"type\":\"new_api_error\"}}"
+        "翻译失败：LLM HTTP 503: {\"error\":{\"code\":\"model_not_found\",\"message\":\"No available channel for model glm-5.1-mini under group vip (distributor) (request id: 202610290238148325210288268d9d6ltTxJXkB)\",\"type\":\"new_api_error\"}}"
       ]
     },
     {
@@ -47,7 +60,7 @@
       "translationModel": "glm-5.1-mini",
       "translationCached": false,
       "translationWarnings": [
-        "翻译失败：LLM HTTP 503: {\"error\":{\"code\":\"model_not_found\",\"message\":\"No available channel for model glm-5.1-mini under group vip (distributor) (request id: 202610280230543131436668268d9d6K4M5ZGc7)\",\"type\":\"new_api_error\"}}"
+        "翻译失败：LLM HTTP 503: {\"error\":{\"code\":\"model_not_found\",\"message\":\"No available channel for model glm-5.1-mini under group vip (distributor) (request id: 202610290238148325210288268d9d6ltTxJXkB)\",\"type\":\"new_api_error\"}}"
       ]
     },
     {
@@ -60,7 +73,7 @@
       "translationModel": "glm-5.1-mini",
       "translationCached": false,
       "translationWarnings": [
-        "翻译失败：LLM HTTP 503: {\"error\":{\"code\":\"model_not_found\",\"message\":\"No available channel for model glm-5.1-mini under group vip (distributor) (request id: 202610280230543131436668268d9d6K4M5ZGc7)\",\"type\":\"new_api_error\"}}"
+        "翻译失败：LLM HTTP 503: {\"error\":{\"code\":\"model_not_found\",\"message\":\"No available channel for model glm-5.1-mini under group vip (distributor) (request id: 202610290238148325210288268d9d6ltTxJXkB)\",\"type\":\"new_api_error\"}}"
       ]
     },
     {
@@ -73,7 +86,7 @@
       "translationModel": "glm-5.1-mini",
       "translationCached": false,
       "translationWarnings": [
-        "翻译失败：LLM HTTP 503: {\"error\":{\"code\":\"model_not_found\",\"message\":\"No available channel for model glm-5.1-mini under group vip (distributor) (request id: 202610280230543131436668268d9d6K4M5ZGc7)\",\"type\":\"new_api_error\"}}"
+        "翻译失败：LLM HTTP 503: {\"error\":{\"code\":\"model_not_found\",\"message\":\"No available channel for model glm-5.1-mini under group vip (distributor) (request id: 202610290238148325210288268d9d6ltTxJXkB)\",\"type\":\"new_api_error\"}}"
       ]
     },
     {
@@ -86,7 +99,7 @@
       "translationModel": "glm-5.1-mini",
       "translationCached": false,
       "translationWarnings": [
-        "翻译失败：LLM HTTP 503: {\"error\":{\"code\":\"model_not_found\",\"message\":\"No available channel for model glm-5.1-mini under group vip (distributor) (request id: 202610280230543131436668268d9d6K4M5ZGc7)\",\"type\":\"new_api_error\"}}"
+        "翻译失败：LLM HTTP 503: {\"error\":{\"code\":\"model_not_found\",\"message\":\"No available channel for model glm-5.1-mini under group vip (distributor) (request id: 202610290238148325210288268d9d6ltTxJXkB)\",\"type\":\"new_api_error\"}}"
       ]
     },
     {
@@ -99,7 +112,7 @@
       "translationModel": "glm-5.1-mini",
       "translationCached": false,
       "translationWarnings": [
-        "翻译失败：LLM HTTP 503: {\"error\":{\"code\":\"model_not_found\",\"message\":\"No available channel for model glm-5.1-mini under group vip (distributor) (request id: 202610280230543131436668268d9d6K4M5ZGc7)\",\"type\":\"new_api_error\"}}"
+        "翻译失败：LLM HTTP 503: {\"error\":{\"code\":\"model_not_found\",\"message\":\"No available channel for model glm-5.1-mini under group vip (distributor) (request id: 202610290238148325210288268d9d6ltTxJXkB)\",\"type\":\"new_api_error\"}}"
       ]
     },
     {
@@ -229,17 +242,6 @@
       "source": "https://robodojo-benchmark.com/leaderboard#news",
       "id": "rbn:2026-09-05:8a43457fe9476ccab66f57bafcb977cc",
       "textZh": "将 OpenWAM-α 加入仿真排行榜（17.18 / 11.92%）和真实世界排行榜（37.6 / 24.4%，由 OpenWAM Team 贡献）。",
-      "translationStatus": "cached",
-      "translationModel": "gpt-5.6-luna",
-      "translationCached": true,
-      "translationWarnings": []
-    },
-    {
-      "date": "2026-09-02",
-      "text": "Update full sim evaluation scores for MolmoAct2 (8.99 / 5.03%, contributed by MolmoAct2 Team).",
-      "source": "https://robodojo-benchmark.com/leaderboard#news",
-      "id": "rbn:2026-09-02:e25be2b0caa8c2575250731810c617f9",
-      "textZh": "更新 MolmoAct2 的完整仿真评估分数（8.99 / 5.03%，由 MolmoAct2 Team 贡献）。",
       "translationStatus": "cached",
       "translationModel": "gpt-5.6-luna",
       "translationCached": true,
