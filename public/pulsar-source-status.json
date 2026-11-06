@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-11-05T03:37:10.970Z",
+  "fetchedAt": "2026-11-06T03:31:55.839Z",
   "windowHours": 168,
   "lanes": {
     "ai": {
@@ -8,6 +8,10 @@
       "resources": [
         {
           "url": "https://sou350121.github.io/pulsar-web/ai-daily/",
+          "status": "ok"
+        },
+        {
+          "url": "https://sou350121.github.io/pulsar-web/ai-daily/2026-11-05",
           "status": "ok"
         },
         {
@@ -29,17 +33,20 @@
         {
           "url": "https://sou350121.github.io/pulsar-web/ai-daily/2026-10-31",
           "status": "ok"
-        },
-        {
-          "url": "https://sou350121.github.io/pulsar-web/ai-daily/2026-10-30",
-          "status": "ok"
         }
       ],
       "reports": [
         {
+          "reportDate": "2026-11-05",
+          "url": "https://sou350121.github.io/pulsar-web/ai-daily/2026-11-05",
+          "status": "new",
+          "count": 5,
+          "revision": 1
+        },
+        {
           "reportDate": "2026-11-04",
           "url": "https://sou350121.github.io/pulsar-web/ai-daily/2026-11-04",
-          "status": "new",
+          "status": "unchanged",
           "count": 8,
           "revision": 1
         },
@@ -70,26 +77,19 @@
           "status": "unchanged",
           "count": 7,
           "revision": 1
-        },
-        {
-          "reportDate": "2026-10-30",
-          "url": "https://sou350121.github.io/pulsar-web/ai-daily/2026-10-30",
-          "status": "unchanged",
-          "count": 10,
-          "revision": 1
         }
       ],
-      "raw": 52,
-      "normalized": 52,
+      "raw": 47,
+      "normalized": 47,
       "changed": 1,
       "unchanged": 5,
       "reportDates": [
+        "2026-11-05",
         "2026-11-04",
         "2026-11-03",
         "2026-11-02",
         "2026-11-01",
-        "2026-10-31",
-        "2026-10-30"
+        "2026-10-31"
       ],
       "todayStatus": "not_published"
     },
@@ -99,6 +99,10 @@
       "resources": [
         {
           "url": "https://sou350121.github.io/pulsar-web/vla/",
+          "status": "ok"
+        },
+        {
+          "url": "https://sou350121.github.io/pulsar-web/vla/2026-11-05",
           "status": "ok"
         },
         {
@@ -116,17 +120,20 @@
         {
           "url": "https://sou350121.github.io/pulsar-web/vla/2026-10-31",
           "status": "ok"
-        },
-        {
-          "url": "https://sou350121.github.io/pulsar-web/vla/2026-10-30",
-          "status": "ok"
         }
       ],
       "reports": [
         {
+          "reportDate": "2026-11-05",
+          "url": "https://sou350121.github.io/pulsar-web/vla/2026-11-05",
+          "status": "new",
+          "count": 28,
+          "revision": 1
+        },
+        {
           "reportDate": "2026-11-04",
           "url": "https://sou350121.github.io/pulsar-web/vla/2026-11-04",
-          "status": "new",
+          "status": "unchanged",
           "count": 28,
           "revision": 1
         },
@@ -150,31 +157,24 @@
           "status": "unchanged",
           "count": 24,
           "revision": 1
-        },
-        {
-          "reportDate": "2026-10-30",
-          "url": "https://sou350121.github.io/pulsar-web/vla/2026-10-30",
-          "status": "unchanged",
-          "count": 2,
-          "revision": 1
         }
       ],
-      "raw": 85,
-      "normalized": 85,
+      "raw": 111,
+      "normalized": 111,
       "changed": 1,
       "unchanged": 4,
       "reportDates": [
+        "2026-11-05",
         "2026-11-04",
         "2026-11-02",
         "2026-11-01",
-        "2026-10-31",
-        "2026-10-30"
+        "2026-10-31"
       ],
       "todayStatus": "not_published"
     }
   },
   "social": {
-    "fetchedAt": "2026-11-05T03:37:10.970Z",
+    "fetchedAt": "2026-11-06T03:31:55.839Z",
     "windowHours": 168,
     "lanes": {
       "vla": {
@@ -185,14 +185,14 @@
           }
         ],
         "raw": 105,
-        "normalized": 8,
+        "normalized": 7,
         "excluded": {
-          "old": 97
+          "old": 98
         },
         "status": "ok",
         "jsonDateRange": [
-          "2026-07-30",
-          "2026-11-03"
+          "2026-08-01",
+          "2026-11-05"
         ]
       },
       "ai": {
@@ -221,14 +221,14 @@
     "configuredModel": "glm-5.1-mini",
     "returnedModel": null,
     "modelMismatch": false,
-    "input": 145,
+    "input": 165,
     "ruleDuplicates": 0,
     "semanticDuplicates": 0,
     "rejected": 0,
     "retained": 0,
-    "candidates": 145,
+    "candidates": 165,
     "existingCandidates": 40,
-    "requests": 38,
+    "requests": 48,
     "fromCache": false,
     "state": "failed-raw-preserved",
     "limits": {
@@ -240,21 +240,21 @@
       "retries": 1
     },
     "lastError": "HTTP 503",
-    "pending": 145,
-    "batches": 19
+    "pending": 165,
+    "batches": 24
   },
   "published": {
     "vla": {
-      "total": 418,
+      "total": 386,
       "domains": {
         "大模型": 2,
-        "具身智能": 416
+        "具身智能": 384
       }
     },
     "ai": {
-      "total": 108,
+      "total": 100,
       "domains": {
-        "大模型": 108,
+        "大模型": 100,
         "具身智能": 0
       }
     }

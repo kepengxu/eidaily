@@ -1,8 +1,8 @@
 {
   "status": "ok",
   "source": "https://robodojo-benchmark.com/leaderboard",
-  "evidenceUrl": "https://robodojo-benchmark.com/assets/index-BCOrvz4N.js",
-  "fetchedAt": "2026-11-05T03:37:46.285Z",
+  "evidenceUrl": "https://robodojo-benchmark.com/assets/index-X92qyXCU.js",
+  "fetchedAt": "2026-11-06T03:32:38.242Z",
   "dateMeaning": "官网News公告日期，非监测时间或模型发布日期",
   "translation": {
     "enabled": true,
@@ -13,15 +13,15 @@
   "items": [
     {
       "date": "2026-11-03",
-      "text": "Add SLA-Preview (42.33 / 33.89%, contributed by SLA Team) to the real-world leaderboard.",
+      "text": "Add SLA-Preview (42.33 / 33.89%, contributed by HKUST(GZ) & OLA) to the real-world leaderboard.",
       "source": "https://robodojo-benchmark.com/leaderboard#news",
-      "id": "rbn:2026-11-03:3f5f21173262a1473ffbf3933ff231b6",
+      "id": "rbn:2026-11-03:93164e670cc183c26ee70fa764584427",
       "textZh": null,
       "translationStatus": "failed",
       "translationModel": "glm-5.1-mini",
       "translationCached": false,
       "translationWarnings": [
-        "翻译失败：LLM HTTP 503: {\"error\":{\"code\":\"model_not_found\",\"message\":\"No available channel for model glm-5.1-mini under group vip (distributor) (request id: 202611050337461601352618268d9d6OiHn2xWx)\",\"type\":\"new_api_error\"}}"
+        "翻译失败：LLM HTTP 503: {\"error\":{\"code\":\"model_not_found\",\"message\":\"No available channel for model glm-5.1-mini under group vip (distributor) (request id: 202611060332380925282878268d9d6Z190elpR)\",\"type\":\"new_api_error\"}}"
       ]
     },
     {
@@ -34,7 +34,7 @@
       "translationModel": "glm-5.1-mini",
       "translationCached": false,
       "translationWarnings": [
-        "翻译失败：LLM HTTP 503: {\"error\":{\"code\":\"model_not_found\",\"message\":\"No available channel for model glm-5.1-mini under group vip (distributor) (request id: 202611050337461601352618268d9d6OiHn2xWx)\",\"type\":\"new_api_error\"}}"
+        "翻译失败：LLM HTTP 503: {\"error\":{\"code\":\"model_not_found\",\"message\":\"No available channel for model glm-5.1-mini under group vip (distributor) (request id: 202611060332380925282878268d9d6Z190elpR)\",\"type\":\"new_api_error\"}}"
       ]
     },
     {
@@ -47,7 +47,7 @@
       "translationModel": "glm-5.1-mini",
       "translationCached": false,
       "translationWarnings": [
-        "翻译失败：LLM HTTP 503: {\"error\":{\"code\":\"model_not_found\",\"message\":\"No available channel for model glm-5.1-mini under group vip (distributor) (request id: 202611050337461601352618268d9d6OiHn2xWx)\",\"type\":\"new_api_error\"}}"
+        "翻译失败：LLM HTTP 503: {\"error\":{\"code\":\"model_not_found\",\"message\":\"No available channel for model glm-5.1-mini under group vip (distributor) (request id: 202611060332380925282878268d9d6Z190elpR)\",\"type\":\"new_api_error\"}}"
       ]
     },
     {
@@ -60,7 +60,7 @@
       "translationModel": "glm-5.1-mini",
       "translationCached": false,
       "translationWarnings": [
-        "翻译失败：LLM HTTP 503: {\"error\":{\"code\":\"model_not_found\",\"message\":\"No available channel for model glm-5.1-mini under group vip (distributor) (request id: 202611050337461601352618268d9d6OiHn2xWx)\",\"type\":\"new_api_error\"}}"
+        "翻译失败：LLM HTTP 503: {\"error\":{\"code\":\"model_not_found\",\"message\":\"No available channel for model glm-5.1-mini under group vip (distributor) (request id: 202611060332380925282878268d9d6Z190elpR)\",\"type\":\"new_api_error\"}}"
       ]
     },
     {
@@ -73,7 +73,7 @@
       "translationModel": "glm-5.1-mini",
       "translationCached": false,
       "translationWarnings": [
-        "翻译失败：LLM HTTP 503: {\"error\":{\"code\":\"model_not_found\",\"message\":\"No available channel for model glm-5.1-mini under group vip (distributor) (request id: 202611050337461601352618268d9d6OiHn2xWx)\",\"type\":\"new_api_error\"}}"
+        "翻译失败：LLM HTTP 503: {\"error\":{\"code\":\"model_not_found\",\"message\":\"No available channel for model glm-5.1-mini under group vip (distributor) (request id: 202611060332380925282878268d9d6Z190elpR)\",\"type\":\"new_api_error\"}}"
       ]
     },
     {
@@ -86,7 +86,7 @@
       "translationModel": "glm-5.1-mini",
       "translationCached": false,
       "translationWarnings": [
-        "翻译失败：LLM HTTP 503: {\"error\":{\"code\":\"model_not_found\",\"message\":\"No available channel for model glm-5.1-mini under group vip (distributor) (request id: 202611050337461601352618268d9d6OiHn2xWx)\",\"type\":\"new_api_error\"}}"
+        "翻译失败：LLM HTTP 503: {\"error\":{\"code\":\"model_not_found\",\"message\":\"No available channel for model glm-5.1-mini under group vip (distributor) (request id: 202611060332380925282878268d9d6Z190elpR)\",\"type\":\"new_api_error\"}}"
       ]
     },
     {
@@ -99,7 +99,7 @@
       "translationModel": "glm-5.1-mini",
       "translationCached": false,
       "translationWarnings": [
-        "翻译失败：LLM HTTP 503: {\"error\":{\"code\":\"model_not_found\",\"message\":\"No available channel for model glm-5.1-mini under group vip (distributor) (request id: 202611050337461601352618268d9d6OiHn2xWx)\",\"type\":\"new_api_error\"}}"
+        "翻译失败：LLM HTTP 503: {\"error\":{\"code\":\"model_not_found\",\"message\":\"No available channel for model glm-5.1-mini under group vip (distributor) (request id: 202611060332380925282878268d9d6Z190elpR)\",\"type\":\"new_api_error\"}}"
       ]
     },
     {
@@ -112,7 +112,7 @@
       "translationModel": "glm-5.1-mini",
       "translationCached": false,
       "translationWarnings": [
-        "翻译失败：LLM HTTP 503: {\"error\":{\"code\":\"model_not_found\",\"message\":\"No available channel for model glm-5.1-mini under group vip (distributor) (request id: 202611050337461601352618268d9d6OiHn2xWx)\",\"type\":\"new_api_error\"}}"
+        "翻译失败：LLM HTTP 503: {\"error\":{\"code\":\"model_not_found\",\"message\":\"No available channel for model glm-5.1-mini under group vip (distributor) (request id: 202611060332380925282878268d9d6Z190elpR)\",\"type\":\"new_api_error\"}}"
       ]
     },
     {
@@ -125,7 +125,7 @@
       "translationModel": "glm-5.1-mini",
       "translationCached": false,
       "translationWarnings": [
-        "翻译失败：LLM HTTP 503: {\"error\":{\"code\":\"model_not_found\",\"message\":\"No available channel for model glm-5.1-mini under group vip (distributor) (request id: 202611050337461601352618268d9d6OiHn2xWx)\",\"type\":\"new_api_error\"}}"
+        "翻译失败：LLM HTTP 503: {\"error\":{\"code\":\"model_not_found\",\"message\":\"No available channel for model glm-5.1-mini under group vip (distributor) (request id: 202611060332380925282878268d9d6Z190elpR)\",\"type\":\"new_api_error\"}}"
       ]
     },
     {
@@ -138,7 +138,7 @@
       "translationModel": "glm-5.1-mini",
       "translationCached": false,
       "translationWarnings": [
-        "翻译失败：LLM HTTP 503: {\"error\":{\"code\":\"model_not_found\",\"message\":\"No available channel for model glm-5.1-mini under group vip (distributor) (request id: 202611050337461601352618268d9d6OiHn2xWx)\",\"type\":\"new_api_error\"}}"
+        "翻译失败：LLM HTTP 503: {\"error\":{\"code\":\"model_not_found\",\"message\":\"No available channel for model glm-5.1-mini under group vip (distributor) (request id: 202611060332380925282878268d9d6Z190elpR)\",\"type\":\"new_api_error\"}}"
       ]
     },
     {
