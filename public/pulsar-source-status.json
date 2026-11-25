@@ -1,9 +1,9 @@
 {
-  "fetchedAt": "2026-11-24T07:01:42.120Z",
+  "fetchedAt": "2026-11-25T05:35:06.399Z",
   "windowHours": 168,
   "lanes": {
     "ai": {
-      "status": "ok",
+      "status": "not_published",
       "directorySuccess": true,
       "resources": [
         {
@@ -33,24 +33,20 @@
         {
           "url": "https://sou350121.github.io/pulsar-web/ai-daily/2026-11-19",
           "status": "ok"
-        },
-        {
-          "url": "https://sou350121.github.io/pulsar-web/ai-daily/2026-11-18",
-          "status": "ok"
         }
       ],
       "reports": [
         {
           "reportDate": "2026-11-24",
           "url": "https://sou350121.github.io/pulsar-web/ai-daily/2026-11-24",
-          "status": "new",
+          "status": "unchanged",
           "count": 9,
           "revision": 1
         },
         {
           "reportDate": "2026-11-23",
           "url": "https://sou350121.github.io/pulsar-web/ai-daily/2026-11-23",
-          "status": "new",
+          "status": "unchanged",
           "count": 7,
           "revision": 1
         },
@@ -81,29 +77,21 @@
           "status": "unchanged",
           "count": 6,
           "revision": 1
-        },
-        {
-          "reportDate": "2026-11-18",
-          "url": "https://sou350121.github.io/pulsar-web/ai-daily/2026-11-18",
-          "status": "unchanged",
-          "count": 6,
-          "revision": 1
         }
       ],
-      "raw": 49,
-      "normalized": 49,
-      "changed": 2,
-      "unchanged": 5,
+      "raw": 43,
+      "normalized": 43,
+      "changed": 0,
+      "unchanged": 6,
       "reportDates": [
         "2026-11-24",
         "2026-11-23",
         "2026-11-22",
         "2026-11-21",
         "2026-11-20",
-        "2026-11-19",
-        "2026-11-18"
+        "2026-11-19"
       ],
-      "todayStatus": "published"
+      "todayStatus": "not_published"
     },
     "vla": {
       "status": "not_published",
@@ -132,17 +120,13 @@
         {
           "url": "https://sou350121.github.io/pulsar-web/vla/2026-11-19",
           "status": "ok"
-        },
-        {
-          "url": "https://sou350121.github.io/pulsar-web/vla/2026-11-18",
-          "status": "ok"
         }
       ],
       "reports": [
         {
           "reportDate": "2026-11-23",
           "url": "https://sou350121.github.io/pulsar-web/vla/2026-11-23",
-          "status": "new",
+          "status": "unchanged",
           "count": 29,
           "revision": 1
         },
@@ -173,32 +157,24 @@
           "status": "unchanged",
           "count": 31,
           "revision": 1
-        },
-        {
-          "reportDate": "2026-11-18",
-          "url": "https://sou350121.github.io/pulsar-web/vla/2026-11-18",
-          "status": "unchanged",
-          "count": 27,
-          "revision": 1
         }
       ],
-      "raw": 130,
-      "normalized": 130,
-      "changed": 1,
+      "raw": 103,
+      "normalized": 103,
+      "changed": 0,
       "unchanged": 5,
       "reportDates": [
         "2026-11-23",
         "2026-11-22",
         "2026-11-21",
         "2026-11-20",
-        "2026-11-19",
-        "2026-11-18"
+        "2026-11-19"
       ],
       "todayStatus": "not_published"
     }
   },
   "social": {
-    "fetchedAt": "2026-11-24T07:01:42.120Z",
+    "fetchedAt": "2026-11-25T05:35:06.399Z",
     "windowHours": 168,
     "lanes": {
       "vla": {
@@ -209,9 +185,9 @@
           }
         ],
         "raw": 126,
-        "normalized": 10,
+        "normalized": 9,
         "excluded": {
-          "old": 116
+          "old": 117
         },
         "status": "ok",
         "jsonDateRange": [
@@ -239,20 +215,20 @@
       }
     }
   },
-  "changedReports": 3,
+  "changedReports": 0,
   "directorySuccesses": 2,
   "processing": {
     "configuredModel": "glm-5.1-mini",
     "returnedModel": null,
     "modelMismatch": false,
-    "input": 189,
+    "input": 155,
     "ruleDuplicates": 0,
     "semanticDuplicates": 0,
     "rejected": 0,
     "retained": 0,
-    "candidates": 189,
+    "candidates": 155,
     "existingCandidates": 40,
-    "requests": 56,
+    "requests": 46,
     "fromCache": false,
     "state": "failed-raw-preserved",
     "limits": {
@@ -264,8 +240,8 @@
       "retries": 1
     },
     "lastError": "HTTP 503",
-    "pending": 189,
-    "batches": 28
+    "pending": 155,
+    "batches": 23
   },
   "published": {
     "vla": {
@@ -276,9 +252,9 @@
       }
     },
     "ai": {
-      "total": 35,
+      "total": 28,
       "domains": {
-        "大模型": 35,
+        "大模型": 28,
         "具身智能": 0
       }
     }

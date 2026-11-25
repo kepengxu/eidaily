@@ -1,11 +1,11 @@
 {
-  "version": "news-45344771902-1",
-  "buildTime": "2026-11-24T07:02:36.578Z",
-  "lastUpdate": "2026-11-24T07:02:36.578Z",
+  "version": "news-45554556542-1",
+  "buildTime": "2026-11-25T05:35:51.366Z",
+  "lastUpdate": "2026-11-25T05:35:51.366Z",
   "updateInterval": "每日北京时间07:30全量；10:00 PULSAR补更",
   "source": "unified-news-pipeline",
   "updated": true,
   "outcome": "updated",
-  "lastSourceSuccess": "2026-11-24T07:01:42.120Z",
+  "lastSourceSuccess": "2026-11-25T05:35:06.399Z",
   "mode": "full"
 }
